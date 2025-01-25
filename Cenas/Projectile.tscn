@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://de402nb4ntl6q" path="res://SpriteTemp/bolhaPlacehold.png" id="1_dhwg6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ebtkg"]
-radius = 6.08276
+radius = 25.77
 
 [node name="Area2D" type="Area2D"]
 

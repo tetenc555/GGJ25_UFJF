@@ -33,3 +33,6 @@ autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_ddiyv")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(7.99986, 0.047034)

@@ -22,5 +22,17 @@ func increase_life(amount):
 func _physics_process(delta):
 	var direction := Input.get_vector("Left","Right","Up","Down")
 	velocity = SPEED * direction.normalized()
-		
+	
 	move_and_slide()
+
+@export var Projectile : PackedScene = preload("res://Cenas/Projectile.tscn")
+
+func _process(delta):
+	if Input.is_action_just_pressed("Fire"):
+		fire()
+		
+func fire():
+	
+	var b = Projectile.instantiate()
+	get_tree().root.add_child(b)
+	
