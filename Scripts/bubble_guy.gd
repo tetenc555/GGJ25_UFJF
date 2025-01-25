@@ -25,6 +25,9 @@ func _physics_process(delta):
 	
 	if Input.is_action_pressed("Run"):
 		velocity *= 1.4
+		sprite.speed_scale = 2
+	else:
+		sprite.speed_scale = 1
 	
 	updateSprite()
 	move_and_slide()

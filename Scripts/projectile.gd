@@ -13,7 +13,7 @@ func _ready():
 	connect("body_entered", Callable(self, "_on_body_entered"))
 # Makes the projectile move in the right direction with the right speed
 func _physics_process(delta: float) -> void:
-	position += direction * speed * delta
+	global_position += direction * speed * delta
 
 # Sets the direction for the projectile
 func set_direction(new_direction: Vector2) -> void:
