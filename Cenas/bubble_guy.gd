@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 const SPEED = 100.0
 var life = 100.0
 
@@ -23,16 +23,24 @@ func _physics_process(delta):
 	var direction := Input.get_vector("Left","Right","Up","Down")
 	velocity = SPEED * direction.normalized()
 	
+	if Input.is_action_pressed("Run"):
+		velocity *= 1.4
+	
+	updateSprite()
 	move_and_slide()
 
-@export var Projectile : PackedScene = preload("res://Cenas/Projectile.tscn")
-
-func _process(delta):
-	if Input.is_action_just_pressed("Fire"):
-		fire()
-		
-func fire():
+func updateSprite():
+	if velocity.x:
+		sprite.play("runHorizontal")
+	elif velocity.y:
+		if velocity.y > 0:
+			sprite.play("runDown")
+		elif velocity.y < 0:
+			sprite.play("runUp")
+	else:
+		sprite.play("idle")
 	
-	var b = Projectile.instantiate()
-	get_tree().root.add_child(b)
-	
+	if velocity.x > 0:
+		sprite.flip_h = false
+	else:
+		sprite.flip_h = true
