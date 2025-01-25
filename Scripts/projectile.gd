@@ -26,4 +26,9 @@ func _on_body_entered(body: Node) -> void:
 		body.take_damage(10)  # Example: deal 10 damage
 
 	emit_signal("projectile_destroyed")
+	
+	
+
+
+func _on_timer_timeout() -> void:
 	queue_free()

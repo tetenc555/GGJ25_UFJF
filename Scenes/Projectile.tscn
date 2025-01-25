@@ -18,3 +18,10 @@ shape = SubResource("CircleShape2D_ebtkg")
 z_index = 1
 scale = Vector2(0.01, 0.01)
 texture = ExtResource("1_dhwg6")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -110,10 +110,8 @@ frame_progress = 0.662782
 shape = SubResource("CapsuleShape2D_ddiyv")
 
 [node name="Shooter" type="Marker2D" parent="."]
-position = Vector2(7.99986, 0.047034)
+position = Vector2(-1.90735e-06, -1.49012e-08)
 
 [node name="Arma" parent="Shooter" instance=ExtResource("3_pbfhw")]
-position = Vector2(-7.99986, -0.047034)
-rotation = 0.0337778
-scale = Vector2(2.47998, 1)
-projectile_speed = 500
+position = Vector2(3.8147e-06, 2.98023e-08)
+projectile_speed = 100
