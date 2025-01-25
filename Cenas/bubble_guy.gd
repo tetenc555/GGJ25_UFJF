@@ -24,7 +24,7 @@ func _physics_process(delta):
 	velocity = SPEED * direction.normalized()
 	
 	if Input.is_action_pressed("Run"):
-		velocity *= 1.35
+		velocity *= 1.4
 	
 	updateSprite()
 	move_and_slide()

@@ -95,13 +95,15 @@ height = 17.9997
 
 [node name="BubbleGuy" type="CharacterBody2D"]
 rotation = -0.00587928
+collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_ws6wt")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ud8o7")
 animation = &"runDown"
 autoplay = "idle"
-frame_progress = 0.632688
+frame_progress = 0.662782
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_ddiyv")
