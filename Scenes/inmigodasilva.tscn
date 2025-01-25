@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://clal5q31sarbf"]
 
 [ext_resource type="Texture2D" uid="uid://bpefvfixb5mki" path="res://Sprites/PlaceHolderInimigo_CatNPC.png" id="1_683mm"]
-[ext_resource type="Script" path="res://Cenas/inmigodasilva.gd" id="1_toa7u"]
+[ext_resource type="Script" path="res://Scripts/inmigodasilva.gd" id="1_toa7u"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qcvwc"]
 atlas = ExtResource("1_683mm")

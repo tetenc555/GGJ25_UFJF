@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://1jtwnqkas6rx"]
 
 [ext_resource type="Texture2D" uid="uid://de402nb4ntl6q" path="res://SpriteTemp/bolhaPlacehold.png" id="1_dhwg6"]
-[ext_resource type="Script" path="res://Cenas/projectile.gd" id="1_ylhuw"]
+[ext_resource type="Script" path="res://Scripts/projectile.gd" id="1_ylhuw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ebtkg"]
 radius = 8.0

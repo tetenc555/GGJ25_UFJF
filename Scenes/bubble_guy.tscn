@@ -1,8 +1,8 @@
 [gd_scene load_steps=15 format=3 uid="uid://rw7ibob5cj24"]
 
-[ext_resource type="Script" path="res://Cenas/bubble_guy.gd" id="1_ws6wt"]
+[ext_resource type="Script" path="res://Scripts/bubble_guy.gd" id="1_ws6wt"]
 [ext_resource type="Texture2D" uid="uid://471ltx2ws53j" path="res://Sprites/PlaceHolder2.png" id="2_xix7d"]
-[ext_resource type="PackedScene" uid="uid://c8dtgf62iny4o" path="res://Cenas/arma.tscn" id="3_pbfhw"]
+[ext_resource type="PackedScene" uid="uid://c8dtgf62iny4o" path="res://Scenes/arma.tscn" id="3_pbfhw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q5lte"]
 atlas = ExtResource("2_xix7d")

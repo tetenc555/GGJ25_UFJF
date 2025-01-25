@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c8dtgf62iny4o"]
 
-[ext_resource type="Script" path="res://Cenas/arma.gd" id="1_m8e2t"]
+[ext_resource type="Script" path="res://Scripts/arma.gd" id="1_m8e2t"]
 [ext_resource type="Texture2D" uid="uid://bqyy5vu4aw02f" path="res://Sprites/placeholderarma5.png" id="2_ufkr3"]
 
 [node name="Arma" type="Node2D"]

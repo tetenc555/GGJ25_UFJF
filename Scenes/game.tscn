@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=4 uid="uid://dmniu5lts32gl"]
 
-[ext_resource type="Script" path="res://Cenas/game.gd" id="1_b32yv"]
-[ext_resource type="PackedScene" uid="uid://rw7ibob5cj24" path="res://Cenas/bubble_guy.tscn" id="1_hqw4n"]
+[ext_resource type="Script" path="res://game.gd" id="1_b32yv"]
+[ext_resource type="PackedScene" uid="uid://rw7ibob5cj24" path="res://Scenes/bubble_guy.tscn" id="1_hqw4n"]
 [ext_resource type="Texture2D" uid="uid://2witbh0kuf5p" path="res://Sprites/PlaceHolderPlace2.png" id="2_bufgs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jwip1"]

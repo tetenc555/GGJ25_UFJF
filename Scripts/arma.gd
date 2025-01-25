@@ -1,7 +1,7 @@
 extends Node2D
 
 
-@export var projectile_scene: PackedScene = preload("res://Cenas/Projectile.tscn")  # Path to your projectile scene
+@export var projectile_scene: PackedScene = preload("res://Scenes/Projectile.tscn")  # Path to your projectile scene
 
 func _process(delta):
 	if Input.is_action_just_pressed("fire"):  # Check if the fire button is pressed

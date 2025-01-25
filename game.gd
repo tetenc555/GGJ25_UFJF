@@ -14,7 +14,7 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_spawn_inimigo_timeout() -> void: #maybe the enemy should be passed as parameter. This should be more generic
-	var new_enemy = preload("res://Cenas/inmigodasilva.tscn").instantiate()
+	var new_enemy = preload("res://Scenes/inmigodasilva.tscn").instantiate()
 	new_enemy.global_position = Vector2(-50,50) #positionStart + Vector2(-20,20)
 	if (new_enemy != null):
 		add_child(new_enemy)
