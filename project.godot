@@ -10,9 +10,9 @@ config_version=5
 
 [application]
 
-config/name="ProjetoBase"
+config/name="GGJ25"
 run/main_scene="res://Menus/MenuInicial.tscn"
-config/features=PackedStringArray("4.4", "Mobile")
+config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
