@@ -5,8 +5,8 @@ extends Node2D
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("Splasher"):
-		pistol.visible = false
-		splasher.visible = true
+		pistol.desactivated = true
+		splasher.desactivated = false
 	if Input.is_action_just_pressed("Pistol"):
-		pistol.visible = true
-		splasher.visible = false
+		splasher.desactivated = true
+		pistol.desactivated = false

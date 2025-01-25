@@ -3,18 +3,24 @@ extends Node2D
 @onready var spawn: Node2D = $Spawn
 @export var projectile_scene: PackedScene = preload("res://Scenes/Projectile.tscn")  # Path to your projectile scene
 @export var projectile_speed = 0
-@export var type = 0
+@export var type = 0 #1 Pistol / 2 Splasher
 
-#1 = Pistol
-#2 = Splasher
-
+@export var desactivated := false
 var direction
 
 func _process(delta):
+	if desactivated:
+		visible = false
+		return
+	visible = true
 	direction = global_position.direction_to(get_global_mouse_position())
 	rotation = direction.angle()
-	if Input.is_action_pressed("Fire"): 
-		shoot_projectile()
+	if type == 1:
+		if Input.is_action_just_pressed("Fire"): 
+			shoot_projectile()
+	elif type == 2:
+		if Input.is_action_pressed("Fire"): 
+			shoot_projectile()
 	
 
 func shoot_projectile():

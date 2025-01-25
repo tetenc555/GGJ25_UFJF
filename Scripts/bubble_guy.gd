@@ -33,20 +33,12 @@ func _physics_process(delta):
 	move_and_slide()
 
 func updateSprite():
-	if velocity.x:
-		sprite.play("runHorizontal")
-	elif velocity.y:
-		if velocity.y > 0:
-			sprite.play("runDown")
-		elif velocity.y < 0:
-			sprite.play("runUp")
+	if velocity:
+		sprite.play("move")
 	else:
 		sprite.play("idle")
 	
 	if velocity.x > 0:
 		sprite.flip_h = false
-	else:
+	elif velocity.x < 0:
 		sprite.flip_h = true
-		
-		
-# Projectile Logic - Working

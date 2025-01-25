@@ -7,6 +7,3 @@ scale = Vector2(1.5, 0.5)
 script = ExtResource("1_m8e2t")
 
 [node name="Marker2D" type="Marker2D" parent="."]
-
-[node name="Spawn" type="Node2D" parent="."]
-position = Vector2(8.66667, 0)
