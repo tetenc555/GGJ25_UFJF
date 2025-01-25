@@ -1,13 +1,29 @@
 extends Area2D
-#Projectile is working but it only shoots to the right
-var speed = 75.0
 
-func _process(delta):
-	position += transform.x * speed * delta
+# Speed of the projectile
+@export var speed: float = 40.0
+# Direction of the projectile
+var direction: Vector2 = Vector2.ZERO
 
-	
-#No use yet
-func _on_Bullet_body_entered(body):
-	if body.is_in_group("mobs"):
-		body.queue_free()
+# Signal to notify when the projectile is destroyed
+signal projectile_destroyed
+
+func _ready():
+	$CollisionShape2D.disabled = false
+	connect("body_entered", Callable(self, "_on_body_entered"))
+
+func _physics_process(delta: float) -> void:
+	position += direction * speed * delta
+
+# Sets the direction for the projectile
+func set_direction(new_direction: Vector2) -> void:
+	direction = new_direction.normalized()
+
+# Handle collision with a body
+func _on_body_entered(body: Node) -> void:
+	# Handle collision logic here
+	if body.has_method("take_damage"):
+		body.take_damage(10)  # Example: deal 10 damage
+
+	emit_signal("projectile_destroyed")
 	queue_free()

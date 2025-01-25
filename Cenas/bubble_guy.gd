@@ -47,11 +47,24 @@ func updateSprite():
 		
 		
 # Projectile Logic - Working
-@export var Projectile : PackedScene = preload("res://Cenas/Projectile.tscn")
+@export var projectile_scene: PackedScene = preload("res://Cenas/Projectile.tscn")  # Path to your projectile scene
+
 func _process(delta):
-	if Input.is_action_just_pressed("shoot"):
-		shoot()
-func shoot():
-	var b = Projectile.instantiate()
-	owner.add_child(b)
-	b.transform = $Shooter.global_transform
+	if Input.is_action_just_pressed("fire"):  # Check if the fire button is pressed
+		shoot_projectile()
+
+func shoot_projectile():
+	# Instantiate the projectile from the PackedScene
+	var projectile_instance = projectile_scene.instantiate()
+	var direction := Input.get_vector("Left","Right","Up","Down")
+	# Set the initial position of the projectile in front of the player
+	projectile_instance.position = global_position + direction  # Example offset
+
+	# Set the direction of the projectile (example: to the right)
+	projectile_instance.set_direction(direction)  # Fire to the right
+
+	# Set the speed of the projectile (this is a custom variable defined in the projectile script)
+	projectile_instance.speed = 400  # Set speed properly here (this works)
+
+	# Add the projectile to the scene
+	get_parent().add_child(projectile_instance)
