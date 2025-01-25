@@ -1,28 +1,35 @@
-[gd_scene load_steps=5 format=3 uid="uid://rw7ibob5cj24"]
+[gd_scene load_steps=6 format=3 uid="uid://rw7ibob5cj24"]
 
 [ext_resource type="Script" path="res://Cenas/bubble_guy.gd" id="1_ws6wt"]
-[ext_resource type="Texture2D" uid="uid://beq23gbn31g3r" path="res://icon.svg" id="1_x1354"]
+[ext_resource type="Texture2D" uid="uid://471ltx2ws53j" path="res://Sprites/PlaceHolder2.png" id="2_xix7d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q5lte"]
+atlas = ExtResource("2_xix7d")
+region = Rect2(0, 0, 25, 25)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ud8o7"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_x1354")
+"texture": SubResource("AtlasTexture_q5lte")
 }],
 "loop": true,
-"name": &"default",
+"name": &"idle",
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bbnrb"]
-size = Vector2(12, 12)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ddiyv"]
+radius = 5.9999
+height = 17.9997
 
 [node name="BubbleGuy" type="CharacterBody2D"]
+rotation = -0.00587928
 script = ExtResource("1_ws6wt")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_ud8o7")
+animation = &"idle"
+autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_bbnrb")
+shape = SubResource("CapsuleShape2D_ddiyv")
