@@ -44,3 +44,14 @@ func updateSprite():
 		sprite.flip_h = false
 	else:
 		sprite.flip_h = true
+		
+		
+# Projectile Logic - Working
+@export var Projectile : PackedScene = preload("res://Cenas/Projectile.tscn")
+func _process(delta):
+	if Input.is_action_just_pressed("shoot"):
+		shoot()
+func shoot():
+	var b = Projectile.instantiate()
+	add_child(b)
+	b.transform = $Shooter.transform

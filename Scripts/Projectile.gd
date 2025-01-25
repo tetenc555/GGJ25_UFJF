@@ -1,6 +1,6 @@
 extends Area2D
-
-var speed = 750
+#Projectile should work, but it doesn't move when created
+var speed = 7500
 
 func _physics_process(delta):
 	position += transform.x * speed * delta
