@@ -1,17 +1,17 @@
 extends Area2D
 
 # Speed of the projectile
-@export var speed: float = 40.0
+@export var speed: float = 400.0
 # Direction of the projectile
 var direction: Vector2 = Vector2.ZERO
 
 # Signal to notify when the projectile is destroyed
 signal projectile_destroyed
-
+# Guarantees the collisions will work
 func _ready():
 	$CollisionShape2D.disabled = false
 	connect("body_entered", Callable(self, "_on_body_entered"))
-
+# Makes the projectile move in the right direction with the right speed
 func _physics_process(delta: float) -> void:
 	position += direction * speed * delta
 

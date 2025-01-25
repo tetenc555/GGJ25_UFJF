@@ -1,19 +1,24 @@
 extends CharacterBody2D
 
-var life = 100.0
+# Enemy health
+@export var max_health: int = 100
+var current_health: int
 
-func _ready():
-	life = 100.0
-	
+func _ready() -> void:
+	# Initialize health
+	current_health = max_health
 
-func decrease_life(amount):
-	if (amount>0):
-		life-=amount;
-	if (life <0):
-		life = 0;
-	
-func increase_life(amount):
-	if (amount>0 || life<100):
-		life+=amount;
-	if (life>100):
-		life=100
+# Method to take damage
+func take_damage(amount: int) -> void:
+	current_health -= amount
+	print("Enemy took damage. Current health: ", current_health)
+
+	# Check if the enemy is dead
+	if current_health <= 0:
+		die()
+
+# Method to handle enemy death
+func die() -> void:
+	print("Enemy has died!")
+	# Add death logic here, e.g., play animation, emit signal, or remove from scene
+	queue_free()
