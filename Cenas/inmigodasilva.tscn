@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://c4ua08usnarlc"]
+[gd_scene load_steps=7 format=3 uid="uid://c4ua08usnarlc"]
 
 [ext_resource type="Texture2D" uid="uid://bpefvfixb5mki" path="res://Sprites/PlaceHolderInimigo_CatNPC.png" id="1_683mm"]
+[ext_resource type="Script" path="res://Cenas/inmigodasilva.gd" id="1_toa7u"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qcvwc"]
 atlas = ExtResource("1_683mm")
@@ -29,10 +30,11 @@ radius = 5.0
 height = 18.0
 
 [node name="Inmigodasilva" type="CharacterBody2D"]
+script = ExtResource("1_toa7u")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_t3d0w")
-frame_progress = 0.0607587
+frame_progress = 0.839184
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_lfgsy")
