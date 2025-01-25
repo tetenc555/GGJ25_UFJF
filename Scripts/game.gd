@@ -3,7 +3,7 @@ extends Node2D
 @onready var spawnInimigoTimer = $spawnInimigo
 @onready var player = $BubbleGuy
 
-@export var spawn_radius: float = 300
+@export var spawn_radius: float = 10
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	spawnInimigoTimer.start() #spawns enemy in 5 seconds! Please change this as enemys should be called. this is only to be generic and alpha testing purpouses.
@@ -17,11 +17,10 @@ func _process(delta: float) -> void:
 func _on_spawn_inimigo_timeout() -> void: #maybe the enemy should be passed as parameter. This should be more generic
 	var new_enemy = preload("res://Scenes/inmigodasilva.tscn").instantiate()
 	var spawnPos = get_spawn_pos()
-	
-	if is_valid_spawn(spawnPos):
-		new_enemy.global_position = spawnPos #positionStart + Vector2(-20,20)
-	if (new_enemy != null):
+
+	if (new_enemy != null && is_valid_spawn(spawnPos)):
 		add_child(new_enemy)
+		new_enemy.  position = spawnPos
 		var positionStart= player.global_position
 	pass # Replace with function body.
 func get_spawn_pos():
