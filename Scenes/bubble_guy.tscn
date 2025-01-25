@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/bubble_guy.gd" id="1_ws6wt"]
 [ext_resource type="Texture2D" uid="uid://471ltx2ws53j" path="res://Sprites/PlaceHolder2.png" id="2_xix7d"]
-[ext_resource type="PackedScene" uid="uid://cugjglg3lvvhx" path="res://Scenes/guns.tscn" id="3_cptbs"]
+[ext_resource type="PackedScene" path="res://Scenes/guns.tscn" id="3_cptbs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q5lte"]
 atlas = ExtResource("2_xix7d")
