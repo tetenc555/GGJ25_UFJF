@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cugjglg3lvvhx"]
+[gd_scene load_steps=6 format=3 uid="uid://cugjglg3lvvhx"]
 
 [ext_resource type="Script" path="res://Scripts/swap.gd" id="1_58ea7"]
 [ext_resource type="PackedScene" uid="uid://c8dtgf62iny4o" path="res://Scenes/gun.tscn" id="2_hcyc5"]
 [ext_resource type="Texture2D" uid="uid://yqx8brw8w0yd" path="res://Sprites/splasher.webp" id="3_jirbl"]
+[ext_resource type="PackedScene" uid="uid://1jtwnqkas6rx" path="res://Scenes/projectile.tscn" id="3_ltr76"]
 [ext_resource type="Texture2D" uid="uid://bri8b36vm3jk5" path="res://Sprites/becker.webp" id="4_ckphy"]
 
 [node name="Guns" type="Node2D"]
@@ -12,8 +13,12 @@ script = ExtResource("1_58ea7")
 visible = false
 position = Vector2(-3, 1.49012e-08)
 scale = Vector2(1, 1)
-type = 2
-projectile_speed = 100
+projectile_scene = ExtResource("3_ltr76")
+traveling_time = 100
+damage = 1
+fire_rate = 0
+max_ammo = 0
+projectile_speed = 50
 desactivated = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Splasher"]
@@ -26,8 +31,13 @@ position = Vector2(31, 0)
 [node name="Pistol" parent="." instance=ExtResource("2_hcyc5")]
 position = Vector2(9.53674e-06, 4.47035e-08)
 scale = Vector2(1, 1)
-type = 1
+projectile_scene = ExtResource("3_ltr76")
+traveling_time = 1
+damage = 0
+fire_rate = 0
+max_ammo = 0
 projectile_speed = 100
+desactivated = false
 
 [node name="Sprite2D" type="Sprite2D" parent="Pistol"]
 position = Vector2(22, -2.98023e-08)
