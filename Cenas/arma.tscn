@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8dtgf62iny4o"]
+
+[ext_resource type="Script" path="res://Cenas/arma.gd" id="1_m8e2t"]
+[ext_resource type="Texture2D" uid="uid://bqyy5vu4aw02f" path="res://Sprites/placeholderarma5.png" id="2_ufkr3"]
+
+[node name="Arma" type="Node2D"]
+script = ExtResource("1_m8e2t")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(-1, -2)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -2.38419e-07)
+scale = Vector2(0.194149, 0.105263)
+texture = ExtResource("2_ufkr3")
