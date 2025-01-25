@@ -20,7 +20,7 @@ func _on_spawn_inimigo_timeout() -> void: #maybe the enemy should be passed as p
 
 	if (new_enemy != null && is_valid_spawn(spawnPos)):
 		add_child(new_enemy)
-		new_enemy.  position = spawnPos
+		new_enemy.global_position = spawnPos
 		var positionStart= player.global_position
 	pass # Replace with function body.
 func get_spawn_pos():
