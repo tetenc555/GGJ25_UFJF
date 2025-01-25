@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://c8dtgf62iny4o"]
 
-[ext_resource type="Script" path="res://Scripts/gun.gd" id="1_m8e2t"]
+[ext_resource type="Script" path="res://Scripts/gun.gd" id="1_qloe2"]
 
 [node name="Arma" type="Node2D"]
 scale = Vector2(1.5, 0.5)
-script = ExtResource("1_m8e2t")
+script = ExtResource("1_qloe2")
 
 [node name="Marker2D" type="Marker2D" parent="."]

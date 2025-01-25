@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var spawn: Node2D = $Spawn
 
-@export var projectile_scene: PackedScene = preload("res://Scenes/Projectile.tscn") 
+@export var projectile_scene: PackedScene = preload("res://Scenes/projectile.tscn") 
 @export var type : int #1 Pistol / 2 Splasher
 @export var traveling_time : int
 @export var damage : int
