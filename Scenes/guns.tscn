@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cugjglg3lvvhx"]
 
-[ext_resource type="Script" path="res://Scripts/shooter.gd" id="1_4kv6q"]
+[ext_resource type="Script" path="res://Scripts/swap.gd" id="1_4kv6q"]
 [ext_resource type="PackedScene" uid="uid://c8dtgf62iny4o" path="res://Scenes/arma.tscn" id="2_p7rfr"]
 [ext_resource type="Texture2D" uid="uid://yqx8brw8w0yd" path="res://Sprites/splasher.webp" id="3_4i2su"]
 [ext_resource type="Texture2D" uid="uid://bri8b36vm3jk5" path="res://Sprites/becker.webp" id="4_6bwsv"]
@@ -12,8 +12,8 @@ script = ExtResource("1_4kv6q")
 visible = false
 position = Vector2(-3, 1.49012e-08)
 scale = Vector2(1, 1)
-projectile_speed = 100
 type = 2
+projectile_speed = 100
 desactivated = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Splasher"]
@@ -26,8 +26,8 @@ position = Vector2(31, 0)
 [node name="Pistol" parent="." instance=ExtResource("2_p7rfr")]
 position = Vector2(9.53674e-06, 4.47035e-08)
 scale = Vector2(1, 1)
-projectile_speed = 100
 type = 1
+projectile_speed = 100
 
 [node name="Sprite2D" type="Sprite2D" parent="Pistol"]
 position = Vector2(22, -2.98023e-08)

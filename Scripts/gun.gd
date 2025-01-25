@@ -1,11 +1,16 @@
 extends Node2D
 
 @onready var spawn: Node2D = $Spawn
-@export var projectile_scene: PackedScene = preload("res://Scenes/Projectile.tscn")  # Path to your projectile scene
-@export var projectile_speed = 0
-@export var type = 0 #1 Pistol / 2 Splasher
 
+@export var projectile_scene: PackedScene = preload("res://Scenes/Projectile.tscn") 
+@export var type : int #1 Pistol / 2 Splasher
+@export var traveling_time : int
+@export var damage : int
+@export var fire_rate : int
+@export var max_ammo : int
+@export var projectile_speed : int
 @export var desactivated := false
+
 var direction
 
 func _process(delta):

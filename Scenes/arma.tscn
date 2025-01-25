@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c8dtgf62iny4o"]
 
-[ext_resource type="Script" path="res://Scripts/arma.gd" id="1_m8e2t"]
+[ext_resource type="Script" path="res://Scripts/gun.gd" id="1_m8e2t"]
 
 [node name="Arma" type="Node2D"]
 scale = Vector2(1.5, 0.5)

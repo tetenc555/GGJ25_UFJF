@@ -1,6 +1,6 @@
 [gd_scene load_steps=26 format=3 uid="uid://rw7ibob5cj24"]
 
-[ext_resource type="Script" path="res://Scripts/bubble_guy.gd" id="1_ws6wt"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_ws6wt"]
 [ext_resource type="Texture2D" uid="uid://3xigddi8mcig" path="res://Sprites/char_run.webp" id="2_qkprk"]
 [ext_resource type="Texture2D" uid="uid://2adgyuiyxi5m" path="res://Sprites/idle_sprite.webp" id="2_rbadb"]
 [ext_resource type="PackedScene" uid="uid://cugjglg3lvvhx" path="res://Scenes/guns.tscn" id="3_cptbs"]
