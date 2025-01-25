@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmniu5lts32gl"]
+
+[ext_resource type="PackedScene" uid="uid://rw7ibob5cj24" path="res://Cenas/bubble_guy.tscn" id="1_hqw4n"]
+
+[node name="Game" type="Node2D"]
+
+[node name="BubbleGuy" parent="." instance=ExtResource("1_hqw4n")]
+
+[node name="Camera2D" type="Camera2D" parent="BubbleGuy"]
+zoom = Vector2(3, 3)

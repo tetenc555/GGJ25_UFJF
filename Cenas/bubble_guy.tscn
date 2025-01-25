@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://rw7ibob5cj24"]
+
+[ext_resource type="Script" path="res://Cenas/bubble_guy.gd" id="1_ws6wt"]
+[ext_resource type="Texture2D" uid="uid://beq23gbn31g3r" path="res://icon.svg" id="1_x1354"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ud8o7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_x1354")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bbnrb"]
+size = Vector2(12, 12)
+
+[node name="BubbleGuy" type="CharacterBody2D"]
+script = ExtResource("1_ws6wt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_ud8o7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_bbnrb")
