@@ -53,5 +53,5 @@ func _process(delta):
 		shoot()
 func shoot():
 	var b = Projectile.instantiate()
-	add_child(b)
-	b.transform = $Shooter.transform
+	owner.add_child(b)
+	b.transform = $Shooter.global_transform
