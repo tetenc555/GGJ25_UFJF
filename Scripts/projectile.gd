@@ -8,9 +8,6 @@ var projectile_speed
 var damage
 var direction: Vector2 = Vector2.ZERO
 
-# Signal to notify when the projectile is destroyed
-signal projectile_destroyed
-
 func _ready():
 	timer.wait_time = travelling_time  # Usando a variável que foi passada no momento da instanciação
 	timer.start()

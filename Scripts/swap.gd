@@ -6,7 +6,7 @@ extends Node2D
 @onready var flask: Node2D = $Flask
 @onready var slingshot: Node2D = $Slingshot
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("Splasher"):
 		pistol.desactivated = true
 		splasher.desactivated = false

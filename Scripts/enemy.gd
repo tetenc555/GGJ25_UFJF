@@ -12,7 +12,7 @@ func _ready() -> void:
 	# Initialize health
 	current_health = max_health
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if movement_type == "H":
 		if direction.x:
 			velocity.x = direction.x * SPEED
@@ -28,7 +28,6 @@ func _physics_process(delta):
 # Method to take damage
 func take_damage(amount: int) -> void:
 	current_health -= amount
-	print("Enemy took damage. Current health: ", current_health)
 
 	# Check if the enemy is dead
 	if current_health <= 0:
@@ -36,7 +35,6 @@ func take_damage(amount: int) -> void:
 
 # Method to handle enemy death
 func die() -> void:
-	print("Enemy has died!")
 	# Add death logic here, e.g., play animation, emit signal, or remove from scene
 	queue_free()
 

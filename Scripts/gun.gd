@@ -14,17 +14,20 @@ extends Node2D
 @export var max_ammo : int
 @export var projectile_speed : int
 @export var desactivated := false
+@export var multishot : int
+@export var manual := false
+@export var explosive := false
+@export var random_spawn := false
 
 var direction
 
-func _process(delta):
+func _process(_delta):
 	if desactivated:
 		visible = false
 		return
 	visible = true
 	
 	timer.wait_time = 1/fire_rate
-	print(fire_rate)
 	if random_decay:
 		bullet_decay_time = randomize_timer()
 	direction = global_position.direction_to(get_global_mouse_position())
@@ -33,25 +36,36 @@ func _process(delta):
 	else:
 		sprite.flip_v = false
 	rotation = direction.angle()
-	if Input.is_action_pressed("Fire"):
+	if Input.is_action_pressed("Fire") and !manual:
 		check_cooldown()
+	elif manual:
+		if Input.is_action_just_pressed("Fire"):
+			check_cooldown()
 
 func check_cooldown():
 	if timer.time_left == 0:
 		shoot_projectile()
 		timer.start()
 	else:
-		print(timer.time_left)
 		pass
 
 func shoot_projectile():
+	if multishot == 1:
+		shoot_in_direction(direction)
+	else:
+		var spread_angle = 45.0
+		var angle_step = spread_angle / (multishot - 1)
+		for i in range(multishot):
+			var angle_offset = (i - (multishot - 1) / 2) * angle_step
+			shoot_in_direction(direction.rotated(deg_to_rad(angle_offset)))
+
+func shoot_in_direction(_direction):
 	var projectile_instance = projectile_scene.instantiate()
 	pass_variables(projectile_instance)
 	get_tree().root.add_child(projectile_instance)
 	projectile_instance.global_position = spawn.global_position
-	projectile_instance.set_direction(direction)
-
-	projectile_instance.projectile_speed = projectile_speed
+	projectile_instance.set_direction(_direction)
+	projectile_instance.projectile_speed = projectile_speed + get_parent().get_parent().velocity.length()
 
 func pass_variables(projectile):
 	projectile.travelling_time = bullet_decay_time
@@ -60,6 +74,3 @@ func pass_variables(projectile):
 
 func randomize_timer():
 	return randf_range(min_decay, max_decay)
-	
-	
-	
