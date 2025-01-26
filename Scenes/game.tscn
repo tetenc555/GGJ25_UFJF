@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://dmniu5lts32gl"]
+[gd_scene load_steps=13 format=4 uid="uid://dmniu5lts32gl"]
 
 [ext_resource type="Script" uid="uid://dwmf82qgvj4e" path="res://Scripts/game.gd" id="1_b32yv"]
 [ext_resource type="PackedScene" uid="uid://rw7ibob5cj24" path="res://Scenes/player.tscn" id="1_hqw4n"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://d22418sesc7kl" path="res://Sprites/tileset.webp" id="5_bg1jl"]
 [ext_resource type="PackedScene" uid="uid://20ilyen6pwa7" path="res://Scenes/trapfloor.tscn" id="6_lyvuk"]
 [ext_resource type="PackedScene" uid="uid://7kv41rdw2f5o" path="res://Scenes/Enemies/Hedgehog/hedgehog.tscn" id="7_1l0tm"]
+[ext_resource type="PackedScene" uid="uid://cd1kc5vnd4xy1" path="res://Scenes/Enemies/dart.tscn" id="8_v158k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gnd66"]
 texture = ExtResource("3_5rco1")
@@ -671,5 +672,7 @@ priority = 1
 
 [node name="Enemy" parent="." instance=ExtResource("7_1l0tm")]
 position = Vector2(-86, -66)
+projectile_scene = ExtResource("8_v158k")
+max_health = 100
 
 [connection signal="timeout" from="spawnInimigo" to="." method="_on_spawn_inimigo_timeout"]

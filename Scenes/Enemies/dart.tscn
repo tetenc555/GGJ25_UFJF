@@ -1,7 +1,20 @@
-[gd_scene format=3 uid="uid://cd1kc5vnd4xy1"]
+[gd_scene load_steps=3 format=3 uid="uid://cd1kc5vnd4xy1"]
+
+[ext_resource type="Script" uid="uid://cmuschdrlbgr0" path="res://Scripts/Enemies/dart.gd" id="1_mvoii"]
+[ext_resource type="Texture2D" uid="uid://bi8p1rks3iff8" path="res://Sprites/SonicSF.webp" id="1_v68w4"]
 
 [node name="Dart" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_mvoii")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.01, -0.05)
+texture = ExtResource("1_v68w4")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

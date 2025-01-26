@@ -14,11 +14,9 @@ extends Node2D
 @export var max_decay : float
 @export var damage : int
 @export var fire_rate : float
-@export var max_ammo : int
 @export var projectile_speed : int
 @export var desactivated := false
 @export var multishot : int
-@export var explosive := false
 @export var random_spawn := false
 
 var direction
