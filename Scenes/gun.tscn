@@ -7,3 +7,6 @@ scale = Vector2(1.5, 0.5)
 script = ExtResource("1_qloe2")
 
 [node name="Marker2D" type="Marker2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
