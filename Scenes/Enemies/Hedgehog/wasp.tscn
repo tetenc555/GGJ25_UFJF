@@ -1,6 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://dak3ch3kc7w7s"]
+[gd_scene load_steps=7 format=3 uid="uid://b3kpgpnwnqtht"]
 
-[ext_resource type="Script" uid="uid://bfa0mqjgqyodx" path="res://Scripts/Enemies/wasp.gd" id="1_bx6jj"]
+[ext_resource type="Script" path="res://Scripts/Enemies/wasp.gd" id="1_bx6jj"]
 [ext_resource type="Texture2D" uid="uid://b3i5vyq6ju1o2" path="res://Sprites/vespa_federal.png" id="2_khybf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3ma4w"]
@@ -18,7 +18,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ccrar"]
-radius = 93.1343
+radius = 182.099
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6sdqd"]
 radius = 10.0499
