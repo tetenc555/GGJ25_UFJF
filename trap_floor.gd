@@ -1,7 +1,7 @@
 extends Area2D
 
 var cooldown = false
-var body_in_area: Node2D = null
+var body_in_area: CharacterBody2D = null
 @onready var cooldownTimer = $CoolDown
 
 func _on_body_entered(body: CharacterBody2D) -> void:
