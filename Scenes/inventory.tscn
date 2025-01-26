@@ -34,7 +34,7 @@ position = Vector2(35, -1.49012e-08)
 [node name="Pistol" parent="." instance=ExtResource("2_c5ffv")]
 position = Vector2(9.53674e-06, 4.47035e-08)
 scale = Vector2(1, 1)
-bullet_decay_time = 1.0
+bullet_decay_time = 2.0
 damage = 25
 fire_rate = 2.0
 projectile_speed = 200

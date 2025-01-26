@@ -2,15 +2,9 @@ extends Node
 
 #Código do menu inicial
 
-@onready var menu_inicial: Control = $"../MenuInicial"
-@onready var opcoes: Control = $"../Opcoes"
+@onready var menu_inicial: Control = $MenuInicial
+@onready var opcoes: Control = $MenuInicial/VBoxContainer/Options
 
-func _ready() -> void:
-	$"../Opcoes/VBoxContainer/GeralSlider".value = GameController.configuracoes.audioMaster
-	$"../Opcoes/VBoxContainer/MusicaSlider".value = GameController.configuracoes.audioMusica
-	$"../Opcoes/VBoxContainer/SFXSlider".value = GameController.configuracoes.audioSFX
-	$"../Opcoes/VBoxContainer/Resolucao".selected = GameController.configuracoes.screen_index
-	$"../MenuInicial/VBoxContainer/Start".grab_focus()
 
 #Menu inicial
 func _on_start_pressed() -> void:

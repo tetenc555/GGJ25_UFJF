@@ -3,7 +3,7 @@ extends Node2D
 @onready var spawner = $Spawner
 @onready var player = $Player
 
-@export var spawn_radius: float = 40
+@export var spawn_radius: float = 70
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#spawner.start() #spawns enemy in 5 seconds! Please change this as enemys should be called. this is only to be generic and alpha testing purpouses.

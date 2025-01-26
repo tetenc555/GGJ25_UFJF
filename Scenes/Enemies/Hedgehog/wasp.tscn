@@ -4,9 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://b3i5vyq6ju1o2" path="res://Sprites/vespa_federal.png" id="2_khybf"]
 [ext_resource type="Texture2D" uid="uid://cwsmitbnufrqi" path="res://Sprites/vespa_federal_damage.png" id="3_1ih8p"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_3ma4w"]
-radius = 8.0
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_iijfs"]
 animations = [{
 "frames": [{
@@ -35,16 +32,15 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_ccrar"]
 radius = 182.099
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_6sdqd"]
-radius = 18.1108
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ixacv"]
+size = Vector2(42, 41)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wwa7g"]
+size = Vector2(31, 33)
 
 [node name="Wasp" type="CharacterBody2D"]
 z_index = 2
 script = ExtResource("1_bx6jj")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-shape = SubResource("CircleShape2D_3ma4w")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 2.38419e-07)
@@ -63,15 +59,19 @@ position = Vector2(0, -1)
 shape = SubResource("CircleShape2D_ccrar")
 
 [node name="Hurtbox" type="Area2D" parent="."]
-visible = false
 collision_layer = 0
 collision_mask = 2147483648
 
 [node name="hurtbox" type="CollisionShape2D" parent="Hurtbox"]
-shape = SubResource("CircleShape2D_6sdqd")
+position = Vector2(-1, 0.5)
+shape = SubResource("RectangleShape2D_ixacv")
 
 [node name="Cooldown" type="Timer" parent="."]
 wait_time = 3.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_wwa7g")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="Aggro" to="." method="_on_aggro_body_entered"]

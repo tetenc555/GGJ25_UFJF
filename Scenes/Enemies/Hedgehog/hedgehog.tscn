@@ -100,7 +100,7 @@ z_index = 2
 script = ExtResource("1_e3802")
 movement_type = "V"
 multishot = 10
-projectile_speed = 100
+projectile_speed = 40
 damage = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

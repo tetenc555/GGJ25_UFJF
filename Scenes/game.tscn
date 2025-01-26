@@ -650,18 +650,6 @@ sources/3 = SubResource("TileSetAtlasSource_dreex")
 position = Vector2(95, -1)
 script = ExtResource("1_b32yv")
 
-[node name="Player" parent="." instance=ExtResource("1_hqw4n")]
-scale = Vector2(1.00492, 1.01242)
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(0.995086, 0.00580712)
-scale = Vector2(1.00002, 1.00422)
-zoom = Vector2(1.731, 1.731)
-limit_left = -364
-limit_top = -208
-limit_right = 369
-limit_bottom = 208
-
 [node name="Spawner" type="Timer" parent="."]
 wait_time = 3.0
 autostart = true
@@ -671,170 +659,125 @@ position = Vector2(-231, -137)
 
 [node name="Traps" type="Node" parent="."]
 
-[node name="Trapfloor7" parent="Traps" instance=ExtResource("4_w3jym")]
-position = Vector2(119, 131)
-
-[node name="Trapfloor8" parent="Traps" instance=ExtResource("4_w3jym")]
-position = Vector2(55, 131)
-
-[node name="Trapfloor9" parent="Traps" instance=ExtResource("4_w3jym")]
-position = Vector2(183, 131)
-
-[node name="Trapfloor10" parent="Traps" instance=ExtResource("4_w3jym")]
-position = Vector2(311, 131)
-
-[node name="Trapfloor11" parent="Traps" instance=ExtResource("4_w3jym")]
-position = Vector2(247, 131)
-
-[node name="Trapfloor2" parent="Traps" instance=ExtResource("4_w3jym")]
-position = Vector2(-265, 131)
-
-[node name="Trapfloor" parent="Traps" instance=ExtResource("4_w3jym")]
-position = Vector2(-329, 131)
-
-[node name="Trapfloor3" parent="Traps" instance=ExtResource("4_w3jym")]
-position = Vector2(-201, 131)
-
-[node name="Trapfloor4" parent="Traps" instance=ExtResource("4_w3jym")]
-position = Vector2(-73, 131)
-
-[node name="Trapfloor5" parent="Traps" instance=ExtResource("4_w3jym")]
-position = Vector2(-137, 131)
-
-[node name="Trapfloor6" parent="Traps" instance=ExtResource("4_w3jym")]
-position = Vector2(-9, 131)
-
-[node name="Trapfloor12" parent="Traps" instance=ExtResource("4_w3jym")]
-position = Vector2(135, 67)
-
-[node name="Trapfloor13" parent="Traps" instance=ExtResource("4_w3jym")]
-position = Vector2(71, 67)
-
-[node name="Trapfloor14" parent="Traps" instance=ExtResource("4_w3jym")]
-position = Vector2(199, 67)
-
-[node name="Trapfloor15" parent="Traps" instance=ExtResource("4_w3jym")]
-position = Vector2(327, 67)
-
-[node name="Trapfloor16" parent="Traps" instance=ExtResource("4_w3jym")]
-position = Vector2(263, 67)
-
-[node name="Trapfloor17" parent="Traps" instance=ExtResource("4_w3jym")]
-position = Vector2(-249, 67)
-
-[node name="Trapfloor18" parent="Traps" instance=ExtResource("4_w3jym")]
-position = Vector2(-313, 67)
-
-[node name="Trapfloor19" parent="Traps" instance=ExtResource("4_w3jym")]
-position = Vector2(-185, 67)
-
-[node name="Trapfloor20" parent="Traps" instance=ExtResource("4_w3jym")]
-position = Vector2(-57, 67)
-
-[node name="Trapfloor21" parent="Traps" instance=ExtResource("4_w3jym")]
-position = Vector2(-121, 67)
-
-[node name="Trapfloor22" parent="Traps" instance=ExtResource("4_w3jym")]
-position = Vector2(7, 67)
-
-[node name="Trapfloor23" parent="Traps" instance=ExtResource("4_w3jym")]
-position = Vector2(119, 3)
-
-[node name="Trapfloor24" parent="Traps" instance=ExtResource("4_w3jym")]
-position = Vector2(55, 3)
-
-[node name="Trapfloor25" parent="Traps" instance=ExtResource("4_w3jym")]
-position = Vector2(183, 3)
-
-[node name="Trapfloor26" parent="Traps" instance=ExtResource("4_w3jym")]
-position = Vector2(311, 3)
-
-[node name="Trapfloor27" parent="Traps" instance=ExtResource("4_w3jym")]
-position = Vector2(247, 3)
-
-[node name="Trapfloor28" parent="Traps" instance=ExtResource("4_w3jym")]
-position = Vector2(-265, 3)
-
-[node name="Trapfloor29" parent="Traps" instance=ExtResource("4_w3jym")]
-position = Vector2(-329, 3)
-
-[node name="Trapfloor30" parent="Traps" instance=ExtResource("4_w3jym")]
-position = Vector2(-201, 3)
-
-[node name="Trapfloor31" parent="Traps" instance=ExtResource("4_w3jym")]
-position = Vector2(-73, 3)
-
-[node name="Trapfloor32" parent="Traps" instance=ExtResource("4_w3jym")]
-position = Vector2(-137, 3)
-
-[node name="Trapfloor33" parent="Traps" instance=ExtResource("4_w3jym")]
-position = Vector2(-9, 3)
-
-[node name="Trapfloor34" parent="Traps" instance=ExtResource("4_w3jym")]
-position = Vector2(135, -61)
-
-[node name="Trapfloor35" parent="Traps" instance=ExtResource("4_w3jym")]
-position = Vector2(71, -61)
-
-[node name="Trapfloor36" parent="Traps" instance=ExtResource("4_w3jym")]
-position = Vector2(199, -61)
-
-[node name="Trapfloor37" parent="Traps" instance=ExtResource("4_w3jym")]
-position = Vector2(327, -61)
-
-[node name="Trapfloor38" parent="Traps" instance=ExtResource("4_w3jym")]
-position = Vector2(263, -61)
-
-[node name="Trapfloor39" parent="Traps" instance=ExtResource("4_w3jym")]
-position = Vector2(-249, -61)
-
-[node name="Trapfloor40" parent="Traps" instance=ExtResource("4_w3jym")]
-position = Vector2(-313, -61)
-
-[node name="Trapfloor41" parent="Traps" instance=ExtResource("4_w3jym")]
-position = Vector2(-185, -61)
-
-[node name="Trapfloor42" parent="Traps" instance=ExtResource("4_w3jym")]
-position = Vector2(-57, -61)
-
 [node name="Trapfloor43" parent="Traps" instance=ExtResource("4_w3jym")]
-position = Vector2(-121, -61)
+position = Vector2(183, 35)
 
 [node name="Trapfloor44" parent="Traps" instance=ExtResource("4_w3jym")]
-position = Vector2(7, -61)
+position = Vector2(135, 3)
 
 [node name="Trapfloor45" parent="Traps" instance=ExtResource("4_w3jym")]
-position = Vector2(119, -125)
+position = Vector2(215, 3)
 
-[node name="Trapfloor46" parent="Traps" instance=ExtResource("4_w3jym")]
+[node name="Trapfloor39" parent="Traps" instance=ExtResource("4_w3jym")]
+position = Vector2(71, 115)
+
+[node name="Trapfloor40" parent="Traps" instance=ExtResource("4_w3jym")]
+position = Vector2(23, 51)
+
+[node name="Trapfloor41" parent="Traps" instance=ExtResource("4_w3jym")]
+position = Vector2(-25, 19)
+
+[node name="Trapfloor42" parent="Traps" instance=ExtResource("4_w3jym")]
+position = Vector2(55, 19)
+
+[node name="Trapfloor20" parent="Traps" instance=ExtResource("4_w3jym")]
+position = Vector2(-73, -109)
+
+[node name="Trapfloor25" parent="Traps" instance=ExtResource("4_w3jym")]
+position = Vector2(-73, 3)
+
+[node name="Trapfloor13" parent="Traps" instance=ExtResource("4_w3jym")]
+position = Vector2(7, -45)
+
+[node name="Trapfloor26" parent="Traps" instance=ExtResource("4_w3jym")]
+position = Vector2(87, 35)
+
+[node name="Trapfloor21" parent="Traps" instance=ExtResource("4_w3jym")]
+position = Vector2(-329, 35)
+
+[node name="Trapfloor19" parent="Traps" instance=ExtResource("4_w3jym")]
+position = Vector2(-233, 19)
+
+[node name="Trapfloor18" parent="Traps" instance=ExtResource("4_w3jym")]
+position = Vector2(-281, -13)
+
+[node name="Trapfloor17" parent="Traps" instance=ExtResource("4_w3jym")]
+position = Vector2(-201, -13)
+
+[node name="Trapfloor16" parent="Traps" instance=ExtResource("4_w3jym")]
+position = Vector2(-265, -61)
+
+[node name="Trapfloor15" parent="Traps" instance=ExtResource("4_w3jym")]
+position = Vector2(-329, -61)
+
+[node name="Trapfloor14" parent="Traps" instance=ExtResource("4_w3jym")]
+position = Vector2(-201, -61)
+
+[node name="Trapfloor12" parent="Traps" instance=ExtResource("4_w3jym")]
+position = Vector2(-153, 19)
+
+[node name="Trapfloor11" parent="Traps" instance=ExtResource("4_w3jym")]
+position = Vector2(-169, 83)
+
+[node name="Trapfloor9" parent="Traps" instance=ExtResource("4_w3jym")]
+position = Vector2(-105, 83)
+
+[node name="Trapfloor7" parent="Traps" instance=ExtResource("4_w3jym")]
+position = Vector2(-9, 83)
+
+[node name="Trapfloor6" parent="Traps" instance=ExtResource("4_w3jym")]
+position = Vector2(-233, 83)
+
+[node name="Trapfloor4" parent="Traps" instance=ExtResource("4_w3jym")]
+position = Vector2(-265, 83)
+
+[node name="Trapfloor3" parent="Traps" instance=ExtResource("4_w3jym")]
+position = Vector2(-313, 115)
+
+[node name="Trapfloor22" parent="Traps" instance=ExtResource("4_w3jym")]
+position = Vector2(-153, -109)
+
+[node name="Trapfloor23" parent="Traps" instance=ExtResource("4_w3jym")]
+position = Vector2(-233, -109)
+
+[node name="Trapfloor24" parent="Traps" instance=ExtResource("4_w3jym")]
+position = Vector2(-297, -109)
+
+[node name="Trapfloor27" parent="Traps" instance=ExtResource("4_w3jym")]
+position = Vector2(87, -45)
+
+[node name="Trapfloor28" parent="Traps" instance=ExtResource("4_w3jym")]
+position = Vector2(39, -77)
+
+[node name="Trapfloor29" parent="Traps" instance=ExtResource("4_w3jym")]
+position = Vector2(119, -77)
+
+[node name="Trapfloor30" parent="Traps" instance=ExtResource("4_w3jym")]
 position = Vector2(55, -125)
 
-[node name="Trapfloor47" parent="Traps" instance=ExtResource("4_w3jym")]
-position = Vector2(183, -125)
-
-[node name="Trapfloor48" parent="Traps" instance=ExtResource("4_w3jym")]
-position = Vector2(311, -125)
-
-[node name="Trapfloor49" parent="Traps" instance=ExtResource("4_w3jym")]
-position = Vector2(247, -125)
-
-[node name="Trapfloor50" parent="Traps" instance=ExtResource("4_w3jym")]
-position = Vector2(-265, -125)
-
-[node name="Trapfloor51" parent="Traps" instance=ExtResource("4_w3jym")]
-position = Vector2(-329, -125)
-
-[node name="Trapfloor52" parent="Traps" instance=ExtResource("4_w3jym")]
-position = Vector2(-201, -125)
-
-[node name="Trapfloor53" parent="Traps" instance=ExtResource("4_w3jym")]
-position = Vector2(-73, -125)
-
-[node name="Trapfloor54" parent="Traps" instance=ExtResource("4_w3jym")]
-position = Vector2(-137, -125)
-
-[node name="Trapfloor55" parent="Traps" instance=ExtResource("4_w3jym")]
+[node name="Trapfloor31" parent="Traps" instance=ExtResource("4_w3jym")]
 position = Vector2(-9, -125)
+
+[node name="Trapfloor32" parent="Traps" instance=ExtResource("4_w3jym")]
+position = Vector2(119, -125)
+
+[node name="Trapfloor33" parent="Traps" instance=ExtResource("4_w3jym")]
+position = Vector2(263, -29)
+
+[node name="Trapfloor34" parent="Traps" instance=ExtResource("4_w3jym")]
+position = Vector2(215, -61)
+
+[node name="Trapfloor35" parent="Traps" instance=ExtResource("4_w3jym")]
+position = Vector2(295, -61)
+
+[node name="Trapfloor36" parent="Traps" instance=ExtResource("4_w3jym")]
+position = Vector2(231, -109)
+
+[node name="Trapfloor37" parent="Traps" instance=ExtResource("4_w3jym")]
+position = Vector2(167, -109)
+
+[node name="Trapfloor38" parent="Traps" instance=ExtResource("4_w3jym")]
+position = Vector2(295, -109)
 
 [node name="Wasp" parent="." instance=ExtResource("8_lr82m")]
 position = Vector2(-199, -66)
@@ -862,6 +805,19 @@ offset_top = -239.0
 offset_right = 357.0
 offset_bottom = 272.0
 color = Color(0.337255, 0.423529, 0.52549, 1)
+
+[node name="Player" parent="." instance=ExtResource("1_hqw4n")]
+position = Vector2(200, 127)
+scale = Vector2(1.00492, 1.01242)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(0.995086, 0.00580712)
+scale = Vector2(1.00002, 1.00422)
+zoom = Vector2(1.731, 1.731)
+limit_left = -364
+limit_top = -208
+limit_right = 369
+limit_bottom = 208
 
 [connection signal="timeout" from="Spawner" to="." method="_on_spawn_inimigo_timeout"]
 [connection signal="timeout" from="GameTime" to="." method="_on_game_time_timeout"]

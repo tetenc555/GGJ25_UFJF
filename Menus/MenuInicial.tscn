@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://b2jk11veho2ly"]
+[gd_scene load_steps=8 format=3 uid="uid://b2jk11veho2ly"]
 
+[ext_resource type="Script" path="res://Menus/MenuInicial.gd" id="1_5xf10"]
 [ext_resource type="Theme" uid="uid://boio4eyolwhtj" path="res://Menus/UI_theme.tres" id="2_ckujo"]
 [ext_resource type="Script" uid="uid://bk654ednl067s" path="res://Menus/coisas_iniciais.gd" id="2_l5uqn"]
 
@@ -51,6 +52,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+script = ExtResource("1_5xf10")
 
 [node name="MenuInicial" type="Control" parent="."]
 layout_mode = 1
