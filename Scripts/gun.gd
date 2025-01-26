@@ -60,6 +60,12 @@ func shoot_projectile():
 			shoot_in_direction(direction.rotated(deg_to_rad(angle_offset)))
 
 func shoot_in_direction(_direction):
+	# Se random_spawn for true, vamos gerar um ângulo aleatório dentro de uma faixa de 90 graus
+	if random_spawn:
+		# Calcular um ângulo aleatório dentro do intervalo de [-45, 45] graus em torno da direção atual
+		var random_angle = randf_range(-45, 45)
+		_direction = _direction.rotated(deg_to_rad(random_angle))
+	
 	var projectile_instance = projectile_scene.instantiate()
 	pass_variables(projectile_instance)
 	get_tree().root.add_child(projectile_instance)

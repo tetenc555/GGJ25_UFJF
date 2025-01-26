@@ -23,6 +23,7 @@ fire_rate = 20.0
 projectile_speed = 50
 desactivated = true
 multishot = 2
+random_spawn = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Splasher"]
 position = Vector2(28, 1)
