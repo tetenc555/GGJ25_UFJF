@@ -96,7 +96,7 @@ radius = 97.6217
 [sub_resource type="CircleShape2D" id="CircleShape2D_4xiih"]
 
 [node name="Hedgehog" type="CharacterBody2D"]
-z_index = 1
+z_index = 2
 script = ExtResource("1_e3802")
 movement_type = "V"
 multishot = 10
