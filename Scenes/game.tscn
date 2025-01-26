@@ -654,7 +654,7 @@ scale = Vector2(1.00492, 1.01242)
 [node name="Camera2D" type="Camera2D" parent="BubbleGuy"]
 position = Vector2(2.35852e-07, 2.36874e-07)
 scale = Vector2(1.00002, 1.00422)
-zoom = Vector2(2.375, 2.375)
+zoom = Vector2(1.585, 1.585)
 limit_left = -269
 limit_top = -208
 limit_right = 269
