@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dpayk766qjqqy"]
+[gd_scene load_steps=8 format=3 uid="uid://x6s2t5xmlor4"]
 
 [ext_resource type="Texture2D" path="res://Sprites/placehlder.png" id="1_bofuf"]
 [ext_resource type="Script" path="res://Scripts/Enemies/wasp.gd" id="1_bx6jj"]
