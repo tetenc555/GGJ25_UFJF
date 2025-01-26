@@ -1,3 +1,6 @@
+#When I wrote this, only God and I understood what I was doing
+#Now, God only knows
+
 extends Node2D
 
 @onready var spawn: Node2D = $Spawn
