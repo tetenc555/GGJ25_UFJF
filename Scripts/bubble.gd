@@ -21,7 +21,7 @@ func set_direction(new_direction: Vector2) -> void:
 
 func _on_body_entered(body: Node) -> void:
 	if body.has_method("take_damage"):
-		body.take_damage(10)
+		body.take_damage(damage)
 		
 func _on_timer_timeout() -> void:
 	queue_free()

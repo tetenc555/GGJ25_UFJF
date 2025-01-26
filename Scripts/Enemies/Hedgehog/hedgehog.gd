@@ -17,22 +17,29 @@ var current_health: int
 var projectile_direction = Vector2(1,1)
 var SPEED = 20.0
 var in_range = false
+var free = true
 
 
 func _ready() -> void:
 	current_health = max_health
 
 func _physics_process(_delta):
+	if !free:
+		SPEED = 0
 	if in_range:
 		check_cooldown()
 	else:
 		var direction = global_position.direction_to(player.global_position)
 		velocity = direction * SPEED
+		update_animation()
 		move_and_slide()
 
 
 func take_damage(amount: int) -> void:
+	free = false
+	sprite.play("damage")
 	current_health -= amount
+	
 
 	# Check if the enemy is dead
 	if current_health <= 0:
@@ -51,6 +58,7 @@ func check_cooldown():
 		pass
 
 func shoot_projectile():
+	projectile_direction = randomize_direction()
 	if multishot == 1:
 		shoot_in_direction(projectile_direction)
 	else:
@@ -63,17 +71,12 @@ func shoot_projectile():
 func shoot_in_direction(_direction):
 	var projectile_instance = projectile_scene.instantiate()
 	
+	sprite.play("attack")
 	get_tree().root.add_child(projectile_instance)
-	projectile_instance.global_position = spawn.global_position
-
-	#var combined_velocity = _direction.normalized() * projectile_speed + velocity
-	#projectile_instance.set_direction(combined_velocity.normalized())  # Direção normalizada
-
-
-	#projectile_instance.projectile_speed = combined_velocity.length()
-
-	# Ajuste a rotação do projétil
-	projectile_instance.rotation = combined_velocity.angle() + deg_to_rad(80)
+	projectile_instance.global_position = global_position
+	
+	projectile_instance.set_direction(_direction)
+	projectile_instance.rotation = _direction.angle() + -80
 	
 func pass_variables(projectile):
 	projectile.travelling_time = bullet_decay_time
@@ -81,18 +84,40 @@ func pass_variables(projectile):
 	projectile.damage = damage
 	
 func update_animation():
-	if velocity:
-		sprite.play("move")
-	else:
-		sprite.play("idle")
-	
-	if velocity.x > 0:
-		sprite.flip_h = false
-	elif velocity.x < 0:
-		sprite.flip_h = true
+	if free:
+		if velocity:
+			sprite.play("move")
+		else:
+			sprite.play("idle")
+		
+		if velocity.x > 0:
+			sprite.flip_h = false
+		elif velocity.x < 0:
+			sprite.flip_h = true
+	elif !free:
+		return
 
 func _on_stop_body_entered(body: Node2D) -> void:
 	in_range = true
 
 func _on_stop_body_exited(body: Node2D) -> void:
 	in_range = false
+
+
+func _on_invisible_area_exited(area: Area2D) -> void:
+	area.disabled = false
+
+func randomize_direction():
+	var x = Vector2(15,0)
+	var y = Vector2(0,15)
+	var random_vector = Vector2(
+		randf_range(x.x, y.x),
+		randf_range(x.y, y.y)
+	)
+	return random_vector
+
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if sprite.animation == "damage":
+		SPEED = 20
+		free = true

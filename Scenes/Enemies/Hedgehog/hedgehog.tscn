@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://7kv41rdw2f5o"]
+[gd_scene load_steps=17 format=3 uid="uid://7kv41rdw2f5o"]
 
 [ext_resource type="Script" uid="uid://c4i7mxemovo5y" path="res://Scripts/Enemies/Hedgehog/hedgehog.gd" id="1_e3802"]
 [ext_resource type="Texture2D" uid="uid://xsefh5nt2xf3" path="res://Sprites/porco_espinho.png" id="2_umecm"]
 [ext_resource type="Texture2D" uid="uid://boa2x3gft5jur" path="res://Sprites/porco_espinho_attack.png" id="2_ybgc7"]
 [ext_resource type="Texture2D" uid="uid://b3ncnhdguk6dx" path="res://Sprites/porco_espinho_walk.png" id="3_4xiih"]
+[ext_resource type="Texture2D" uid="uid://bemaex3qb6sd5" path="res://Sprites/damage.png" id="4_vhyiu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vhyiu"]
 atlas = ExtResource("2_ybgc7")
@@ -45,6 +46,20 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_umecm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_vhyiu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_umecm")
+}],
+"loop": false,
+"name": &"damage",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_umecm")
 }],
 "loop": true,
 "name": &"idle",
@@ -78,22 +93,24 @@ radius = 28.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_vhyiu"]
 radius = 97.6217
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_4xiih"]
+
 [node name="Hedgehog" type="CharacterBody2D"]
 z_index = 1
 script = ExtResource("1_e3802")
-projectile_scene = null
-max_health = null
 movement_type = "V"
 multishot = 10
-projectile_speed = null
-bullet_decay_time = null
+projectile_speed = 100
 damage = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_6rm1w")
-animation = &"attack"
+animation = &"damage"
+frame = 2
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("CapsuleShape2D_lfgsy")
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -110,11 +127,23 @@ autostart = true
 position = Vector2(-1, 7)
 
 [node name="Stop" type="Area2D" parent="."]
+visible = false
 collision_layer = 0
 collision_mask = 2147483648
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stop"]
 shape = SubResource("CircleShape2D_vhyiu")
 
+[node name="Invisible" type="Area2D" parent="."]
+visible = false
+collision_layer = 0
+collision_mask = 8388608
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Invisible"]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_4xiih")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="Stop" to="." method="_on_stop_body_entered"]
 [connection signal="body_exited" from="Stop" to="." method="_on_stop_body_exited"]
+[connection signal="area_exited" from="Invisible" to="." method="_on_invisible_area_exited"]
