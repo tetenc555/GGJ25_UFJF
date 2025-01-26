@@ -11,8 +11,8 @@ func decrease_life(amount):
 	if (amount>0):
 		life-=amount;
 	if (life <0):
-		life = 0;
-	print(life);
+		die();
+		
 	
 func increase_life(amount):
 	if (amount>0 || life<100):
@@ -43,3 +43,7 @@ func updateSprite():
 		sprite.flip_h = false
 	elif velocity.x < 0:
 		sprite.flip_h = true
+		
+func die() -> void:
+	# Add death logic here, e.g., play animation, emit signal, or remove from scene
+	queue_free()

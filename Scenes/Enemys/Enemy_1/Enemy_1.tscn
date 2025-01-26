@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://7kv41rdw2f5o"]
 
-[ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_e3802"]
+[ext_resource type="Script" path="res://Scripts/Enemys/Enemy_1/Enemy_1.gd" id="1_e3802"]
 [ext_resource type="Texture2D" uid="uid://bpefvfixb5mki" path="res://Sprites/PlaceHolderInimigo_CatNPC.png" id="2_isuc7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qcvwc"]
