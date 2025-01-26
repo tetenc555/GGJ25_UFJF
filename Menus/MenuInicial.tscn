@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://b2jk11veho2ly"]
 
-[ext_resource type="Script" path="res://Menus/MenuInicial.gd" id="1_5xf10"]
+[ext_resource type="Script" path="res://Menus/MenuInicial.gd" id="1_pq5jh"]
 [ext_resource type="Theme" uid="uid://boio4eyolwhtj" path="res://Menus/UI_theme.tres" id="2_ckujo"]
 [ext_resource type="Script" uid="uid://bk654ednl067s" path="res://Menus/coisas_iniciais.gd" id="2_l5uqn"]
 
@@ -52,7 +52,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-script = ExtResource("1_5xf10")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -358.0
+offset_top = -180.0
+offset_right = 1637.0
+offset_bottom = 941.0
+color = Color(0.101961, 0.109804, 0.172549, 1)
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("1_pq5jh")
 
 [node name="MenuInicial" type="Control" parent="."]
 layout_mode = 1
@@ -67,10 +76,8 @@ mouse_filter = 1
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_left = 1.0
-offset_top = 51.0
-offset_right = 1.0
-offset_bottom = 142.0
+offset_top = 90.0
+offset_bottom = 181.0
 grow_horizontal = 2
 theme_override_font_sizes/normal_font_size = 66
 bbcode_enabled = true
@@ -83,9 +90,8 @@ anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 371.0
-offset_top = 214.0
-offset_right = -344.0
-offset_bottom = -24.0
+offset_top = 308.0
+offset_right = -371.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 30
@@ -214,4 +220,12 @@ libraries = {
 }
 autoplay = "Inicial"
 
+[connection signal="pressed" from="MenuInicial/VBoxContainer/Start" to="Node" method="_on_start_pressed"]
+[connection signal="pressed" from="MenuInicial/VBoxContainer/Options" to="Node" method="_on_options_pressed"]
+[connection signal="pressed" from="MenuInicial/VBoxContainer/Quit" to="Node" method="_on_quit_pressed"]
+[connection signal="item_selected" from="Opcoes/VBoxContainer/Resolucao" to="Node" method="_on_resolucao_item_selected"]
+[connection signal="value_changed" from="Opcoes/VBoxContainer/GeralSlider" to="Node" method="_on_geral_slider_value_changed"]
+[connection signal="value_changed" from="Opcoes/VBoxContainer/MusicaSlider" to="Node" method="_on_musica_slider_value_changed"]
+[connection signal="value_changed" from="Opcoes/VBoxContainer/SFXSlider" to="Node" method="_on_sfx_slider_value_changed"]
+[connection signal="pressed" from="Opcoes/VBoxContainer/Voltar" to="Node" method="_on_voltar_pressed"]
 [connection signal="animation_finished" from="CoisasIniciais/AnimationPlayer" to="CoisasIniciais" method="_on_animation_player_animation_finished"]
