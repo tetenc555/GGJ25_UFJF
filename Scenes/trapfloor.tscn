@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://20ilyen6pwa7"]
 
-[ext_resource type="Script" uid="uid://c7sagjjmiupfk" path="res://Scripts/trapfloor.gd" id="1_g2vgs"]
+[ext_resource type="Script" path="res://Scripts/trapfloor.gd" id="1_g2vgs"]
 [ext_resource type="Texture2D" uid="uid://b7hlipactrio1" path="res://Sprites/spikes.png" id="2_b6xg8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ver1p"]
