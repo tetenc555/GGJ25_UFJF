@@ -3,9 +3,6 @@
 [ext_resource type="Script" uid="uid://c7sagjjmiupfk" path="res://Scripts/trapfloor.gd" id="1_g2vgs"]
 [ext_resource type="Texture2D" uid="uid://b7hlipactrio1" path="res://Sprites/spikes.png" id="2_b6xg8"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yh7c6"]
-size = Vector2(16, 16)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_ver1p"]
 atlas = ExtResource("2_b6xg8")
 region = Rect2(0, 0, 16, 32)
@@ -63,14 +60,14 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_b6xg8"]
+radius = 6.0
+
 [node name="Trapfloor" type="Area2D"]
 z_index = 1
 collision_mask = 2147483648
 script = ExtResource("1_g2vgs")
 damage = 1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_yh7c6")
 
 [node name="Cooldown" type="Timer" parent="."]
 one_shot = true
@@ -79,6 +76,10 @@ one_shot = true
 sprite_frames = SubResource("SpriteFrames_h1ovb")
 animation = &"damage"
 autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_b6xg8")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
