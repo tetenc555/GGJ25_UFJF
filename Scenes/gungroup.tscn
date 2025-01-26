@@ -14,21 +14,15 @@ script = ExtResource("1_58ea7")
 [node name="Splasher" parent="." instance=ExtResource("2_hcyc5")]
 position = Vector2(-3, 1.49012e-08)
 scale = Vector2(1, 1)
-projectile_scene = null
-bullet_decay_time = null
 random_decay = true
 min_decay = 0.3
 max_decay = 1.2
 damage = 1
 fire_rate = 20.0
-max_ammo = null
 projectile_speed = 50
 desactivated = true
 multishot = 2
-manual = null
-explosive = null
 random_spawn = true
-bouncy = null
 
 [node name="Sprite2D" type="Sprite2D" parent="Splasher"]
 position = Vector2(28, 1)
@@ -40,21 +34,10 @@ position = Vector2(35, -1.49012e-08)
 [node name="Pistol" parent="." instance=ExtResource("2_hcyc5")]
 position = Vector2(9.53674e-06, 4.47035e-08)
 scale = Vector2(1, 1)
-projectile_scene = null
 bullet_decay_time = 1.0
-random_decay = null
-min_decay = null
-max_decay = null
-damage = null
 fire_rate = 1.0
-max_ammo = null
 projectile_speed = 100
-desactivated = null
 multishot = 1
-manual = null
-explosive = null
-random_spawn = null
-bouncy = null
 
 [node name="Sprite2D" type="Sprite2D" parent="Pistol"]
 position = Vector2(25, -4.47035e-08)
@@ -67,21 +50,12 @@ position = Vector2(32, -1)
 visible = false
 position = Vector2(-3, 1.49012e-08)
 scale = Vector2(1, 1)
-projectile_scene = null
 bullet_decay_time = 3.0
-random_decay = null
-min_decay = null
-max_decay = null
 damage = 1
 fire_rate = 0.5
-max_ammo = null
 projectile_speed = 50
 desactivated = true
 multishot = 3
-manual = null
-explosive = null
-random_spawn = null
-bouncy = null
 
 [node name="Sprite2D" type="Sprite2D" parent="Shotgun"]
 position = Vector2(35, 1)
@@ -94,21 +68,12 @@ position = Vector2(48, -1)
 visible = false
 position = Vector2(-3, 1.49012e-08)
 scale = Vector2(1, 1)
-projectile_scene = null
 bullet_decay_time = 2.0
-random_decay = null
-min_decay = null
-max_decay = null
 damage = 5
 fire_rate = 0.4
-max_ammo = null
 projectile_speed = 50
 desactivated = true
 multishot = 1
-manual = null
-explosive = null
-random_spawn = null
-bouncy = null
 
 [node name="Sprite2D" type="Sprite2D" parent="Flask"]
 position = Vector2(28, 1)
@@ -121,21 +86,13 @@ position = Vector2(36, -1.49012e-08)
 visible = false
 position = Vector2(-3, 1.49012e-08)
 scale = Vector2(1, 1)
-projectile_scene = null
 bullet_decay_time = 3.0
-random_decay = null
-min_decay = null
-max_decay = null
 damage = 50
 fire_rate = 2.0
-max_ammo = null
 projectile_speed = 200
 desactivated = true
 multishot = 1
 manual = true
-explosive = null
-random_spawn = null
-bouncy = null
 
 [node name="Sprite2D" type="Sprite2D" parent="Slingshot"]
 position = Vector2(27, 1)
