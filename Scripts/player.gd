@@ -12,7 +12,7 @@ func decrease_life(amount):
 		life-=amount;
 	if (life <0):
 		life = 0;
-	print(life);
+	
 	
 func increase_life(amount):
 	if (amount>0 || life<100):

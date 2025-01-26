@@ -19,6 +19,7 @@ shape = SubResource("RectangleShape2D_yh7c6")
 
 [node name="CoolDown" type="Timer" parent="."]
 wait_time = 3.0
+one_shot = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

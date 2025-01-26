@@ -28,5 +28,4 @@ func get_spawn_pos():
 		return Vector2(randf_range(-100,100), randf_range(70,-90))
 func is_valid_spawn(spawnPos: Vector2) -> bool:
 	var distance_to_player = player.position.distance_to(spawnPos)
-	print(distance_to_player)
 	return distance_to_player > spawn_radius

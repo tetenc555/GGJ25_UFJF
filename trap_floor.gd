@@ -4,13 +4,13 @@ var cooldown = false
 var body_in_area: Node2D = null
 @onready var cooldownTimer = $CoolDown
 
-func _on_body_entered(body: Node2D) -> void:
+func _on_body_entered(body: CharacterBody2D) -> void:
 	if body_in_area == null:  
 		body_in_area = body  #defines player body
 		if not cooldown:
 			apply_damage()
 
-func _on_body_exited(body: Node2D) -> void:
+func _on_body_exited(body: CharacterBody2D) -> void:
 	if body == body_in_area:
 		body_in_area = null  
 		cooldownTimer.stop()  # Stop the cooldown timer

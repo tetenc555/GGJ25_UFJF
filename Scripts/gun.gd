@@ -24,7 +24,6 @@ func _process(delta):
 	visible = true
 	
 	timer.wait_time = 1/fire_rate
-	print(fire_rate)
 	if random_decay:
 		bullet_decay_time = randomize_timer()
 	direction = global_position.direction_to(get_global_mouse_position())
@@ -41,7 +40,6 @@ func check_cooldown():
 		shoot_projectile()
 		timer.start()
 	else:
-		print(timer.time_left)
 		pass
 
 func shoot_projectile():
