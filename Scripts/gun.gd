@@ -18,8 +18,10 @@ extends Node2D
 @export var manual := false
 @export var explosive := false
 @export var random_spawn := false
+@export var bouncy := false
 
 var direction
+var velocity : Vector2 = Vector2.ZERO  # A velocidade do projétil
 
 func _process(_delta):
 	if desactivated:
@@ -71,6 +73,9 @@ func shoot_in_direction(_direction):
 	projectile_instance.set_direction(_direction)
 	projectile_instance.projectile_speed = projectile_speed + get_parent().get_parent().velocity.length()
 
+	# Configuração de velocidade inicial do projétil
+	projectile_instance.velocity = _direction * projectile_instance.projectile_speed
+
 func pass_variables(projectile):
 	projectile.travelling_time = bullet_decay_time
 	projectile.projectile_speed = damage
@@ -78,3 +83,12 @@ func pass_variables(projectile):
 
 func randomize_timer():
 	return randf_range(min_decay, max_decay)
+
+# Aqui, implementamos a lógica de colisão e reflexão se o projétil for bouncy
+func _on_collision(collided_with: Node2D, normal: Vector2):
+	if bouncy:
+		# Refletir a direção com base na colisão
+		var bounce_direction = velocity.bounce(normal)  # Usando o método bounce() do Vector2
+		velocity = bounce_direction  # Atualiza a direção com a nova refletida
+		set_direction(velocity.angle())  # Atualiza a rotação do projétil de acordo com a nova direção
+		# O projétil continua se movendo após o "quique"
