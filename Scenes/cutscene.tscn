@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://udyygexp6snj"]
+
+[ext_resource type="Script" path="res://Scripts/cutscene.gd" id="1_td7v3"]
+[ext_resource type="Theme" uid="uid://boio4eyolwhtj" path="res://Menus/UI_theme.tres" id="2_0amcp"]
+
+[node name="cutscene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_td7v3")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.501
+anchor_top = 0.278
+anchor_right = 0.501
+anchor_bottom = 0.278
+offset_left = -638.28
+offset_top = -56.16
+offset_right = 637.72
+offset_bottom = 56.84
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "[center]For many years, Bubblets and Needlers fought against each other! Always in war, the two groups made several attacks against their nations! 
+But this time, Niddlers  went too far, they decided to start a invasion at the Bubble Kingdom's sewage. Now, you, the city's best  guard need to destroy the invasors and
+ make them regret this attack!"
+fit_content = true
+
+[node name="Pass" type="Button" parent="."]
+offset_left = 415.0
+offset_top = 535.0
+offset_right = 879.0
+offset_bottom = 595.0
+theme = ExtResource("2_0amcp")
+theme_override_font_sizes/font_size = 36
+text = "Let's kill them all!"
+
+[connection signal="pressed" from="Pass" to="." method="_on_pass_pressed"]

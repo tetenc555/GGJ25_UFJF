@@ -14,7 +14,7 @@ func _ready() -> void:
 
 #Menu inicial
 func _on_start_pressed() -> void:
-	SceneController.changeSceneTo("res://Scenes/game.tscn", "CircleToon")
+	SceneController.changeSceneTo("res://Scenes/cutscene.tscn", "CircleToon")
 
 func _on_options_pressed() -> void:
 	opcoes.visible = true
