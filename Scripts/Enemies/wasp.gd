@@ -41,6 +41,7 @@ func _physics_process(_delta):
 			var direction = global_position.direction_to(player.global_position)
 			velocity = direction * SPEED
 			move_and_slide()
+			update_animation()
 	elif !aggro:
 		direction_timer -= _delta
 		
@@ -51,7 +52,7 @@ func _physics_process(_delta):
 	
 		velocity = current_direction * SPEED
 		move_and_slide()
-
+		update_animation()
 func update_animation():
 	if free:
 		if velocity:
@@ -60,13 +61,13 @@ func update_animation():
 			sprite.play("idle")
 		
 		if velocity.x > 0:
-			sprite.flip_h = false
-		elif velocity.x < 0:
 			sprite.flip_h = true
+		elif velocity.x < 0:
+			sprite.flip_h = false
 	elif !free:
 		return
 func take_damage(amount: int) -> void:
-	free = false
+	#free = false
 	#sprite.play("damage")
 	current_health -= amount
 	
@@ -85,3 +86,8 @@ func _on_aggro_body_entered(body: Node2D) -> void:
 func _on_hurtbox_body_entered(body: Node2D) -> void:
 	if body.has_method("take_damage"):
 		body.take_damage(1) 
+		
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if sprite.animation == "damage":
+		SPEED = 20
+		free = true
