@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3oecsjpf54f0"
-path="res://.godot/imported/buhchat.jpg-7726e0775ea1dd030bc4602222397324.ctex"
+uid="uid://bmpokrpnyrq08"
+path="res://.godot/imported/tileset x1.png-cd22468724702e1a368bd6ab06d4eabe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://buhchat.jpg"
-dest_files=["res://.godot/imported/buhchat.jpg-7726e0775ea1dd030bc4602222397324.ctex"]
+source_file="res://Sprites/tileset x1.png"
+dest_files=["res://.godot/imported/tileset x1.png-cd22468724702e1a368bd6ab06d4eabe.ctex"]
 
 [params]
 
