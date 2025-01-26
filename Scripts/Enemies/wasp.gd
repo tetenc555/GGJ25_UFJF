@@ -37,6 +37,7 @@ func _physics_process(_delta):
 		if !free:
 			SPEED = 0
 		else:
+			SPEED = 80
 			var direction = global_position.direction_to(player.global_position)
 			velocity = direction * SPEED
 			move_and_slide()
@@ -66,7 +67,7 @@ func update_animation():
 		return
 func take_damage(amount: int) -> void:
 	free = false
-	sprite.play("damage")
+	#sprite.play("damage")
 	current_health -= amount
 	
 

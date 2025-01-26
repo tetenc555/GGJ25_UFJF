@@ -1,20 +1,16 @@
-[gd_scene load_steps=8 format=3 uid="uid://dak3ch3kc7w7s"]
+[gd_scene load_steps=7 format=3 uid="uid://dak3ch3kc7w7s"]
 
-[ext_resource type="Texture2D" uid="uid://dkibtcxiiqopy" path="res://Sprites/placehlder.png" id="1_bofuf"]
-[ext_resource type="Script" path="res://Scripts/Enemies/wasp.gd" id="1_bx6jj"]
+[ext_resource type="Script" uid="uid://bfa0mqjgqyodx" path="res://Scripts/Enemies/wasp.gd" id="1_bx6jj"]
+[ext_resource type="Texture2D" uid="uid://b3i5vyq6ju1o2" path="res://Sprites/vespa_federal.png" id="2_khybf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3ma4w"]
 radius = 8.0
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ios4t"]
-atlas = ExtResource("1_bofuf")
-region = Rect2(0, 0, 498, 528)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_iijfs"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ios4t")
+"texture": ExtResource("2_khybf")
 }],
 "loop": true,
 "name": &"default",
@@ -27,7 +23,8 @@ radius = 93.1343
 [sub_resource type="CircleShape2D" id="CircleShape2D_6sdqd"]
 radius = 10.0499
 
-[node name="wasp" type="CharacterBody2D"]
+[node name="Wasp" type="CharacterBody2D"]
+z_index = 2
 script = ExtResource("1_bx6jj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -35,7 +32,6 @@ shape = SubResource("CircleShape2D_3ma4w")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 2.38419e-07)
-scale = Vector2(0.0281124, 0.0246212)
 sprite_frames = SubResource("SpriteFrames_iijfs")
 
 [node name="Aggro" type="Area2D" parent="."]

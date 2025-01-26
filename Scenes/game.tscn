@@ -1,13 +1,13 @@
 [gd_scene load_steps=13 format=4 uid="uid://dmniu5lts32gl"]
 
-[ext_resource type="Script" path="res://Scripts/game.gd" id="1_b32yv"]
+[ext_resource type="Script" uid="uid://dwmf82qgvj4e" path="res://Scripts/game.gd" id="1_b32yv"]
 [ext_resource type="PackedScene" uid="uid://rw7ibob5cj24" path="res://Scenes/player.tscn" id="1_hqw4n"]
 [ext_resource type="Texture2D" uid="uid://dtkspkfrfkpr3" path="res://Sprites/tileset_x1-sheet.webp" id="3_5rco1"]
 [ext_resource type="Texture2D" uid="uid://bmpokrpnyrq08" path="res://Sprites/tileset x1.png" id="4_61o27"]
 [ext_resource type="Texture2D" uid="uid://d22418sesc7kl" path="res://Sprites/tileset.webp" id="5_bg1jl"]
 [ext_resource type="PackedScene" uid="uid://20ilyen6pwa7" path="res://Scenes/trapfloor.tscn" id="6_lyvuk"]
 [ext_resource type="PackedScene" uid="uid://7kv41rdw2f5o" path="res://Scenes/Enemies/Hedgehog/hedgehog.tscn" id="7_1l0tm"]
-[ext_resource type="PackedScene" uid="uid://dak3ch3kc7w7s" path="res://Scenes/Enemies/wasp.tscn" id="8_e5w8l"]
+[ext_resource type="PackedScene" uid="uid://dak3ch3kc7w7s" path="res://Scenes/Enemies/Hedgehog/wasp.tscn" id="8_e5w8l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gnd66"]
 texture = ExtResource("3_5rco1")
@@ -743,7 +743,7 @@ priority = 1
 [node name="wasp" parent="." instance=ExtResource("8_e5w8l")]
 position = Vector2(-108, -80)
 
-[node name="wasp" parent="." instance=ExtResource("8_e5w8l")]
+[node name="wasp2" parent="." instance=ExtResource("8_e5w8l")]
 position = Vector2(-108, -80)
 
 [connection signal="timeout" from="Spawner" to="." method="_on_spawn_inimigo_timeout"]
