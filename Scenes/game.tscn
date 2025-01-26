@@ -649,7 +649,6 @@ sources/3 = SubResource("TileSetAtlasSource_dreex")
 script = ExtResource("1_b32yv")
 
 [node name="BubbleGuy" parent="." instance=ExtResource("1_hqw4n")]
-z_index = 2
 scale = Vector2(1.00492, 1.01242)
 
 [node name="Camera2D" type="Camera2D" parent="BubbleGuy"]
@@ -671,6 +670,10 @@ position = Vector2(-72, 4)
 priority = 1
 
 [node name="Enemy" parent="." instance=ExtResource("7_1l0tm")]
-position = Vector2(-86, -66)
+position = Vector2(-231, -137)
+projectile_scene = null
+max_health = null
+projectile_speed = null
+bullet_decay_time = null
 
 [connection signal="timeout" from="spawnInimigo" to="." method="_on_spawn_inimigo_timeout"]

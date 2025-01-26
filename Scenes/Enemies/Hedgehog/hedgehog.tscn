@@ -1,7 +1,72 @@
-[gd_scene load_steps=5 format=3 uid="uid://7kv41rdw2f5o"]
+[gd_scene load_steps=15 format=3 uid="uid://7kv41rdw2f5o"]
 
 [ext_resource type="Script" uid="uid://c4i7mxemovo5y" path="res://Scripts/Enemies/Hedgehog/hedgehog.gd" id="1_e3802"]
 [ext_resource type="Texture2D" uid="uid://xsefh5nt2xf3" path="res://Sprites/porco_espinho.png" id="2_umecm"]
+[ext_resource type="Texture2D" uid="uid://boa2x3gft5jur" path="res://Sprites/porco_espinho_attack.png" id="2_ybgc7"]
+[ext_resource type="Texture2D" uid="uid://b3ncnhdguk6dx" path="res://Sprites/porco_espinho_walk.png" id="3_4xiih"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vhyiu"]
+atlas = ExtResource("2_ybgc7")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_30nou"]
+atlas = ExtResource("2_ybgc7")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a2fw6"]
+atlas = ExtResource("3_4xiih")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j5u64"]
+atlas = ExtResource("3_4xiih")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6yqq"]
+atlas = ExtResource("3_4xiih")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yr001"]
+atlas = ExtResource("3_4xiih")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6rm1w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vhyiu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_30nou")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_umecm")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a2fw6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j5u64")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6yqq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yr001")
+}],
+"loop": true,
+"name": &"move",
+"speed": 6.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lfgsy"]
 radius = 5.0
@@ -10,30 +75,46 @@ height = 18.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_syu1a"]
 radius = 28.0
 
-[node name="Enemy" type="CharacterBody2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_vhyiu"]
+radius = 97.6217
+
+[node name="Hedgehog" type="CharacterBody2D"]
+z_index = 1
 script = ExtResource("1_e3802")
+projectile_scene = null
+max_health = null
 movement_type = "V"
 multishot = 10
+projectile_speed = null
+bullet_decay_time = null
 damage = 1
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.998058, 1)
-texture = ExtResource("2_umecm")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6rm1w")
+animation = &"attack"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_lfgsy")
 
 [node name="Area2D" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_syu1a")
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
+[node name="Cooldown" type="Timer" parent="."]
+one_shot = true
 autostart = true
 
-[node name="Cooldown" type="Timer" parent="."]
-wait_time = 2.0
-one_shot = true
+[node name="Spawn" type="Node2D" parent="."]
+position = Vector2(-1, 7)
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="Stop" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2147483648
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stop"]
+shape = SubResource("CircleShape2D_vhyiu")
+
+[connection signal="body_entered" from="Stop" to="." method="_on_stop_body_entered"]
+[connection signal="body_exited" from="Stop" to="." method="_on_stop_body_exited"]

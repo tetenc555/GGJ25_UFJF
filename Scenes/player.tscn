@@ -154,10 +154,10 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u2e7y"]
 size = Vector2(19.9997, 15.0056)
 
-[node name="BubbleGuy" type="CharacterBody2D"]
+[node name="BubbleGuy" type="CharacterBody2D" groups=["Player"]]
 z_index = 2
 rotation = -0.00587928
-collision_layer = 2
+collision_layer = 2147483650
 collision_mask = 5
 script = ExtResource("1_ws6wt")
 

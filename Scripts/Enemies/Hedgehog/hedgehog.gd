@@ -2,42 +2,34 @@ extends CharacterBody2D
 
 @export var projectile_scene: PackedScene = preload("res://Scenes/Enemies/dart.tscn") 
 @export var max_health: int = 100
-@onready var timer = $Timer
-@onready var cooldown: Timer = $Cooldown
 @export var movement_type : String
 @export var multishot : int = 1
 @export var projectile_speed : int = 50
 @export var bullet_decay_time : int = 1
 @export var damage : int = 0
 
-var aggro = true
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var spawn: Node2D = $Spawn
+@onready var cooldown: Timer = $Cooldown
+@onready var player = get_tree().get_first_node_in_group("Player")
+
 var current_health: int
-var direction : Vector2i
 var projectile_direction = Vector2(1,1)
 var SPEED = 20.0
+var in_range = false
 
 
 func _ready() -> void:
 	current_health = max_health
 
 func _physics_process(_delta):
-	if aggro:
+	if in_range:
 		check_cooldown()
-	
-	if movement_type == "H":
-		direction = Vector2i(1,0)
-		if direction.x:
-			velocity.x = direction.x * SPEED
-		else:
-			velocity.x = move_toward(velocity.x, 0, SPEED)
-	elif movement_type == "V":
-		direction = Vector2i(0,1)
-		if direction.y:
-			velocity.y = direction.y * SPEED
-		else:
-			velocity.y = move_toward(velocity.y, 0, SPEED)
+	else:
+		var direction = global_position.direction_to(player.global_position)
+		velocity = direction * SPEED
+		move_and_slide()
 
-	move_and_slide()
 
 func take_damage(amount: int) -> void:
 	current_health -= amount
@@ -72,16 +64,35 @@ func shoot_in_direction(_direction):
 	var projectile_instance = projectile_scene.instantiate()
 	
 	get_tree().root.add_child(projectile_instance)
-	projectile_instance.global_position = global_position
-	
-	projectile_instance.set_direction(_direction)
-	projectile_instance.rotation = _direction.angle() + -80
+	projectile_instance.global_position = spawn.global_position
+
+	#var combined_velocity = _direction.normalized() * projectile_speed + velocity
+	#projectile_instance.set_direction(combined_velocity.normalized())  # Direção normalizada
+
+
+	#projectile_instance.projectile_speed = combined_velocity.length()
+
+	# Ajuste a rotação do projétil
+	projectile_instance.rotation = combined_velocity.angle() + deg_to_rad(80)
 	
 func pass_variables(projectile):
 	projectile.travelling_time = bullet_decay_time
 	projectile.projectile_speed = projectile_speed
 	projectile.damage = damage
+	
+func update_animation():
+	if velocity:
+		sprite.play("move")
+	else:
+		sprite.play("idle")
+	
+	if velocity.x > 0:
+		sprite.flip_h = false
+	elif velocity.x < 0:
+		sprite.flip_h = true
 
+func _on_stop_body_entered(body: Node2D) -> void:
+	in_range = true
 
-func _on_timer_timeout() -> void:
-	direction = - direction
+func _on_stop_body_exited(body: Node2D) -> void:
+	in_range = false

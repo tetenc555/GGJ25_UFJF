@@ -30,10 +30,10 @@ func _physics_process(_delta):
 	else:
 		sprite.speed_scale = 1
 	
-	updateSprite()
+	update_animation()
 	move_and_slide()
 
-func updateSprite():
+func update_animation():
 	if velocity:
 		sprite.play("move")
 	else:

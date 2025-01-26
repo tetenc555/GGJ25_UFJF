@@ -7,6 +7,7 @@ var travelling_time = 1
 var projectile_speed = 50
 var damage
 var direction: Vector2 = Vector2.ZERO
+var destructive = true
 
 func _ready():
 	timer.wait_time = travelling_time 
