@@ -11,7 +11,7 @@ radius = 8.0
 radius = 3.0
 
 [node name="Area2D" type="Area2D"]
-z_index = 1
+z_index = 3
 script = ExtResource("1_i1mt7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
