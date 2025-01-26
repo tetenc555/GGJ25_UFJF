@@ -740,32 +740,6 @@ priority = 1
 position = Vector2(-88, -60)
 priority = 1
 
-[node name="wasp" parent="."]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-position = Vector2(-108, -80)
-script = null
-
-[node name="wasp2" parent="."]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-position = Vector2(-108, -80)
-script = null
-
 [node name="Wasp" parent="." instance=ExtResource("8_lr82m")]
 position = Vector2(-199, -66)
 
