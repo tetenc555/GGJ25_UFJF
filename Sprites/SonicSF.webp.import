@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwoatumkbkua3"
-path="res://.godot/imported/bolhas_verde.webp-d1ba2da1638488c7d1ff9d41191799ab.ctex"
+uid="uid://bi8p1rks3iff8"
+path="res://.godot/imported/SonicSF.webp-35963d08f199bddf6c0a9c68b576e476.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/bolhas_verde.webp"
-dest_files=["res://.godot/imported/bolhas_verde.webp-d1ba2da1638488c7d1ff9d41191799ab.ctex"]
+source_file="res://Sprites/SonicSF.webp"
+dest_files=["res://.godot/imported/SonicSF.webp-35963d08f199bddf6c0a9c68b576e476.ctex"]
 
 [params]
 

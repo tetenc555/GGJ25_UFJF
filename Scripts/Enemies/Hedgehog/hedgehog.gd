@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-# Enemy health
 @export var max_health: int = 100
 @onready var timer = $Timer
 @export var SPEED = 100.0
@@ -13,18 +12,9 @@ func _ready() -> void:
 	current_health = max_health
 
 func _physics_process(_delta):
-	if movement_type == "H":
-		if direction.x:
-			velocity.x = direction.x * SPEED
-		else:
-			velocity.x = move_toward(velocity.x, 0, SPEED)
-	elif movement_type == "V":
-		if direction.y:
-			velocity.y = direction.y * SPEED
-		else:
-			velocity.y = move_toward(velocity.y, 0, SPEED)
 	
-	move_and_slide()
+	
+	move()
 # Method to take damage
 func take_damage(amount: int) -> void:
 	current_health -= amount
@@ -41,3 +31,18 @@ func die() -> void:
 
 func _on_timer_timeout():
 	direction = -direction
+
+func move():
+	return
+	if movement_type == "H":
+		if direction.x:
+			velocity.x = direction.x * SPEED
+		else:
+			velocity.x = move_toward(velocity.x, 0, SPEED)
+	elif movement_type == "V":
+		if direction.y:
+			velocity.y = direction.y * SPEED
+		else:
+			velocity.y = move_toward(velocity.y, 0, SPEED)
+	move_and_slide()
+	

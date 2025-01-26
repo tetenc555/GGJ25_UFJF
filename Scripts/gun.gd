@@ -7,7 +7,7 @@ extends Node2D
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var timer: Timer = $Timer
 
-@export var projectile_scene: PackedScene = preload("res://Scenes/projectile.tscn") 
+@export var projectile_scene: PackedScene = preload("res://Scenes/bubble.tscn") 
 @export var bullet_decay_time : float 
 @export var random_decay : bool
 @export var min_decay : float

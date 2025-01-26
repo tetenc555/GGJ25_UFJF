@@ -25,9 +25,11 @@ func _enter_tree() -> void:
 '''
 
 func verify_save_directory(path : String):
+	return
 	print(DirAccess.make_dir_absolute(path))
 
 func loadData(fileName : String):
+	return
 	if not ResourceLoader.exists(savePath + fileName):
 		printerr("File does not exist")
 		configuracoes = Configuracoes.new()
@@ -36,6 +38,7 @@ func loadData(fileName : String):
 	DisplayServer.window_set_size(Configuracoes.resolucoes[configuracoes.screen_index])
 
 func saveData(fileName : String):
+	return
 	print(ResourceSaver.save(configuracoes, savePath + fileName))
 #endregion
 
