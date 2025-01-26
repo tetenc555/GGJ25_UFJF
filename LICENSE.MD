@@ -1,0 +1,1 @@
+Bubble Mayhem © 2025 by Cauã Moreno, Elizabeth Fernandes de Azevedo, Estêvão Barbosa Fiorilo da Rocha, Miguel Dias de Abreu, Roz Oliveira Costa, João Pedro Ferreira Srbek, João Lucas Silva Machado is licensed under CC BY-NC-SA 4.0 
