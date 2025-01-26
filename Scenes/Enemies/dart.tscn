@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cd1kc5vnd4xy1"]
 
 [ext_resource type="Script" uid="uid://cmuschdrlbgr0" path="res://Scripts/Enemies/dart.gd" id="1_mvoii"]
-[ext_resource type="Texture2D" uid="uid://bi8p1rks3iff8" path="res://Sprites/SonicSF.webp" id="1_v68w4"]
+[ext_resource type="Texture2D" uid="uid://djsuk6eqvj0ma" path="res://Sprites/porco_espinho_projeteis1.png" id="2_mvoii"]
 
 [node name="Dart" type="Area2D"]
 collision_layer = 0
@@ -11,8 +11,9 @@ script = ExtResource("1_mvoii")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.01, -0.05)
-texture = ExtResource("1_v68w4")
+texture = ExtResource("2_mvoii")
+hframes = 7
+frame = 3
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true

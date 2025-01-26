@@ -4,7 +4,7 @@ extends Area2D
 @onready var timer: Timer = $Timer
 
 var travelling_time = 1
-var projectile_speed
+var projectile_speed = 50
 var damage
 var direction: Vector2 = Vector2.ZERO
 

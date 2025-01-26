@@ -73,8 +73,9 @@ func shoot_in_direction(_direction):
 	
 	get_tree().root.add_child(projectile_instance)
 	projectile_instance.global_position = global_position
+	
 	projectile_instance.set_direction(_direction)
-	projectile_instance.projectile_speed = projectile_speed
+	projectile_instance.rotation = _direction.angle() + -80
 	
 func pass_variables(projectile):
 	projectile.travelling_time = bullet_decay_time

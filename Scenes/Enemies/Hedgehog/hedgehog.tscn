@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://7kv41rdw2f5o"]
 
 [ext_resource type="Script" uid="uid://c4i7mxemovo5y" path="res://Scripts/Enemies/Hedgehog/hedgehog.gd" id="1_e3802"]
-[ext_resource type="Texture2D" uid="uid://bi8p1rks3iff8" path="res://Sprites/SonicSF.webp" id="2_umecm"]
+[ext_resource type="Texture2D" uid="uid://xsefh5nt2xf3" path="res://Sprites/porco_espinho.png" id="2_umecm"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lfgsy"]
 radius = 5.0
@@ -17,7 +17,7 @@ multishot = 10
 damage = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(-0.185314, 0.0412704)
+scale = Vector2(0.998058, 1)
 texture = ExtResource("2_umecm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
