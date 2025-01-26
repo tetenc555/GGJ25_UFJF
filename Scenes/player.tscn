@@ -153,7 +153,7 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ddiyv"]
 radius = 5.9999
-height = 17.9997
+height = 28.0113
 
 [node name="BubbleGuy" type="CharacterBody2D"]
 rotation = -0.00587928
@@ -167,6 +167,7 @@ animation = &"idle"
 autoplay = "move"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.023517, 3.99993)
 shape = SubResource("CapsuleShape2D_ddiyv")
 
 [node name="Guns" parent="." instance=ExtResource("3_cptbs")]
