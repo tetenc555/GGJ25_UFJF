@@ -30,7 +30,7 @@ func _on_spawn_inimigo_timeout() -> void: #maybe the enemy should be passed as p
 		var _positionStart = player.global_position
 	pass # Replace with function body.
 func get_spawn_pos():
-		return Vector2(randf_range(-260,260), randf_range(160,-160))
+		return Vector2(randf_range(-300,300), randf_range(150,-150))
 func is_valid_spawn(spawnPos: Vector2) -> bool:
 	var distance_to_player = player.position.distance_to(spawnPos)
 	return distance_to_player > spawn_radius

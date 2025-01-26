@@ -65,7 +65,7 @@ func update_animation():
 		return
 func take_damage(amount: int) -> void:
 	#free = false
-	#sprite.play("damage")
+	sprite.play("damage")
 	current_health -= amount
 	
 
