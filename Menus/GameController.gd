@@ -24,22 +24,22 @@ func _enter_tree() -> void:
 	3. Sai debugando aí. 
 '''
 
-func verify_save_directory(path : String):
+func verify_save_directory(_path : String):
 	return
-	print(DirAccess.make_dir_absolute(path))
+	#print(DirAccess.make_dir_absolute(path))
 
-func loadData(fileName : String):
+func loadData(_fileName : String):
 	return
-	if not ResourceLoader.exists(savePath + fileName):
-		printerr("File does not exist")
-		configuracoes = Configuracoes.new()
-		return
-	configuracoes = ResourceLoader.load(savePath + fileName)
-	DisplayServer.window_set_size(Configuracoes.resolucoes[configuracoes.screen_index])
+	#if not ResourceLoader.exists(savePath + fileName):
+	#	printerr("File does not exist")
+	#	configuracoes = Configuracoes.new()
+	#	return
+	#configuracoes = ResourceLoader.load(savePath + fileName)
+	#DisplayServer.window_set_size(Configuracoes.resolucoes[configuracoes.screen_index])
 
-func saveData(fileName : String):
+func saveData(_fileName : String):
 	return
-	print(ResourceSaver.save(configuracoes, savePath + fileName))
+	#print(ResourceSaver.save(configuracoes, savePath + fileName))
 #endregion
 
 func fecharAplicacao():

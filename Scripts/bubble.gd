@@ -29,7 +29,7 @@ func _on_timer_timeout() -> void:
 	sprite.play("pop")
 
 
-func _on_killzone_body_entered(body: Node2D) -> void:
+func _on_killzone_body_entered(_body: Node2D) -> void:
 	pass
 
 
