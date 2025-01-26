@@ -1,4 +1,4 @@
-# The Bubble War
+# Bubble Mayhem
 
 ## Participants:
 [Cauã Moreno](https://github.com/CauaMoreno)
