@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var spawn: Node2D = $Spawn
+@onready var sprite: Sprite2D = $Sprite2D
 
 @export var projectile_scene: PackedScene = preload("res://Scenes/projectile.tscn") 
 @export var bullet_decay_time : float 
@@ -25,6 +26,10 @@ func _process(delta):
 	if random_decay:
 		bullet_decay_time = randomize_timer()
 	direction = global_position.direction_to(get_global_mouse_position())
+	if rotation > 1.5 or rotation < -1.5:
+		sprite.flip_v = true
+	else:
+		sprite.flip_v = false
 	rotation = direction.angle()
 	if Input.is_action_pressed("Fire"):
 		check_cooldown()

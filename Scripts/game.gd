@@ -6,6 +6,7 @@ extends Node2D
 @export var spawn_radius: float = 10
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	return
 	spawnInimigoTimer.start() #spawns enemy in 5 seconds! Please change this as enemys should be called. this is only to be generic and alpha testing purpouses.
 	pass # Replace with function body.
 

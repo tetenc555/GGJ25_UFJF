@@ -151,9 +151,8 @@ animations = [{
 "speed": 6.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ddiyv"]
-radius = 5.9999
-height = 28.0113
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u2e7y"]
+size = Vector2(19.9997, 15.0056)
 
 [node name="BubbleGuy" type="CharacterBody2D"]
 rotation = -0.00587928
@@ -167,8 +166,8 @@ animation = &"idle"
 autoplay = "move"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.023517, 3.99993)
-shape = SubResource("CapsuleShape2D_ddiyv")
+position = Vector2(0.94119, 10.5028)
+shape = SubResource("RectangleShape2D_u2e7y")
 
 [node name="Guns" parent="." instance=ExtResource("3_cptbs")]
-position = Vector2(1.99997, 0.0117585)
+position = Vector2(1.98821, 2.01172)

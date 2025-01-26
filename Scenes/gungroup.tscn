@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://cugjglg3lvvhx"]
+[gd_scene load_steps=8 format=3 uid="uid://cugjglg3lvvhx"]
 
 [ext_resource type="Script" path="res://Scripts/swap.gd" id="1_58ea7"]
 [ext_resource type="PackedScene" uid="uid://c8dtgf62iny4o" path="res://Scenes/gun.tscn" id="2_hcyc5"]
 [ext_resource type="Texture2D" uid="uid://c3crfd6thfeq2" path="res://Sprites/splasher.webp" id="3_jirbl"]
 [ext_resource type="Texture2D" uid="uid://bri8b36vm3jk5" path="res://Sprites/becker.webp" id="4_ckphy"]
+[ext_resource type="Texture2D" uid="uid://7jmbkcniiepb" path="res://Sprites/pistol.webp" id="4_nce8q"]
+[ext_resource type="Texture2D" uid="uid://bxhchy8t21cfl" path="res://Sprites/shotgun.webp" id="5_omerg"]
+[ext_resource type="Texture2D" uid="uid://b2fush865qy87" path="res://Sprites/slingshot.webp" id="7_x8su3"]
 
 [node name="Guns" type="Node2D"]
 script = ExtResource("1_58ea7")
@@ -21,11 +24,11 @@ projectile_speed = 50
 desactivated = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Splasher"]
-position = Vector2(24, 1)
+position = Vector2(28, 1)
 texture = ExtResource("3_jirbl")
 
 [node name="Spawn" type="Node2D" parent="Splasher"]
-position = Vector2(31, 0)
+position = Vector2(35, -1.49012e-08)
 
 [node name="Pistol" parent="." instance=ExtResource("2_hcyc5")]
 position = Vector2(9.53674e-06, 4.47035e-08)
@@ -34,11 +37,11 @@ bullet_decay_time = 1.0
 projectile_speed = 100
 
 [node name="Sprite2D" type="Sprite2D" parent="Pistol"]
-position = Vector2(22, -2.98023e-08)
-texture = ExtResource("4_ckphy")
+position = Vector2(25, -4.47035e-08)
+texture = ExtResource("4_nce8q")
 
 [node name="Spawn" type="Node2D" parent="Pistol"]
-position = Vector2(30, -1)
+position = Vector2(32, -1)
 
 [node name="Shotgun" parent="." instance=ExtResource("2_hcyc5")]
 visible = false
@@ -53,11 +56,11 @@ projectile_speed = 50
 desactivated = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Shotgun"]
-position = Vector2(24, 1)
-texture = ExtResource("3_jirbl")
+position = Vector2(35, 1)
+texture = ExtResource("5_omerg")
 
 [node name="Spawn" type="Node2D" parent="Shotgun"]
-position = Vector2(31, 0)
+position = Vector2(48, -1)
 
 [node name="Flask" parent="." instance=ExtResource("2_hcyc5")]
 visible = false
@@ -69,11 +72,11 @@ projectile_speed = 50
 desactivated = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Flask"]
-position = Vector2(24, 1)
-texture = ExtResource("3_jirbl")
+position = Vector2(28, 1)
+texture = ExtResource("4_ckphy")
 
 [node name="Spawn" type="Node2D" parent="Flask"]
-position = Vector2(31, 0)
+position = Vector2(36, -1.49012e-08)
 
 [node name="Slingshot" parent="." instance=ExtResource("2_hcyc5")]
 visible = false
@@ -85,8 +88,8 @@ projectile_speed = 100
 desactivated = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Slingshot"]
-position = Vector2(24, 1)
-texture = ExtResource("3_jirbl")
+position = Vector2(27, 1)
+texture = ExtResource("7_x8su3")
 
 [node name="Spawn" type="Node2D" parent="Slingshot"]
-position = Vector2(31, 0)
+position = Vector2(28, -6)
