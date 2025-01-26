@@ -3,12 +3,16 @@ extends Node2D
 @onready var spawn: Node2D = $Spawn
 
 @export var projectile_scene: PackedScene = preload("res://Scenes/projectile.tscn") 
-@export var traveling_time : int 
+@export var bullet_decay_time : float 
+@export var random_decay : bool
+@export var min_decay : float
+@export var max_decay : float
 @export var damage : int
 @export var fire_rate : int
 @export var max_ammo : int
 @export var projectile_speed : int
 @export var desactivated := false
+
 
 var direction
 
@@ -17,6 +21,9 @@ func _process(delta):
 		visible = false
 		return
 	visible = true
+		
+	if random_decay:
+		bullet_decay_time = randomize_timer()
 	direction = global_position.direction_to(get_global_mouse_position())
 	rotation = direction.angle()
 	if Input.is_action_pressed("Fire"):
@@ -35,7 +42,12 @@ func shoot_projectile():
 	projectile_instance.projectile_speed = projectile_speed
 
 func pass_variables(projectile):
-	projectile.travelling_time = traveling_time
+	projectile.travelling_time = bullet_decay_time
 	projectile.projectile_speed = damage
 	projectile.damage = damage
+
+func randomize_timer():
+	return randf_range(min_decay, max_decay)
+	
+	
 	
