@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cd1kc5vnd4xy1"]
 
-[ext_resource type="Script" uid="uid://cmuschdrlbgr0" path="res://Scripts/Enemies/dart.gd" id="1_mvoii"]
+[ext_resource type="Script" path="res://Scripts/Enemies/dart.gd" id="1_mvoii"]
 [ext_resource type="Texture2D" uid="uid://djsuk6eqvj0ma" path="res://Sprites/porco_espinho_projeteis1.png" id="2_mvoii"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mvoii"]
@@ -26,5 +26,5 @@ frame = 3
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_entered" from="." to="." method="_on_hitbox_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
