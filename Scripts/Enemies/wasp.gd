@@ -53,18 +53,13 @@ func _physics_process(_delta):
 		velocity = current_direction * SPEED
 		move_and_slide()
 		update_animation()
+
 func update_animation():
-	if free:
-		if velocity:
-			sprite.play("move")
-		else:
-			sprite.play("idle")
-		
-		if velocity.x > 0:
-			sprite.flip_h = true
-		elif velocity.x < 0:
-			sprite.flip_h = false
-	elif !free:
+	if velocity.x > 0:
+		sprite.flip_h = true
+	elif velocity.x < 0:
+		sprite.flip_h = false
+	if !free:
 		return
 func take_damage(amount: int) -> void:
 	#free = false

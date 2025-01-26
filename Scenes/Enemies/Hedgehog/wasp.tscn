@@ -28,6 +28,7 @@ z_index = 2
 script = ExtResource("1_bx6jj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("CircleShape2D_3ma4w")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -35,6 +36,7 @@ position = Vector2(0, 2.38419e-07)
 sprite_frames = SubResource("SpriteFrames_iijfs")
 
 [node name="Aggro" type="Area2D" parent="."]
+visible = false
 collision_layer = 0
 collision_mask = 2147483648
 
@@ -43,6 +45,7 @@ position = Vector2(0, -1)
 shape = SubResource("CircleShape2D_ccrar")
 
 [node name="Hurtbox" type="Area2D" parent="."]
+visible = false
 collision_layer = 0
 collision_mask = 2147483648
 

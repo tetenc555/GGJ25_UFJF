@@ -12,7 +12,7 @@ func take_damage(amount):
 	if !invincible:
 		if (amount>0):
 			life-=amount;
-		if (life >= 0):
+		if (life <= 0):
 			die();
 
 func _physics_process(_delta):
@@ -50,8 +50,6 @@ func update_animation():
 				sprite.play("move_bubble")
 			elif !velocity:
 				sprite.play("idle_bubble")
-		elif life == 0:
-			return
 	
 	if velocity.x > 0:
 		sprite.flip_h = false
@@ -60,6 +58,8 @@ func update_animation():
 		
 func die() -> void:
 	if dying == false:
+		sprite.play("idle")
+		free = false
 		dying = true
 		SceneController.reloadCurrentScene("Diamond")
 
