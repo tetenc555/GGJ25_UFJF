@@ -1,10 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://1jtwnqkas6rx"]
+[gd_scene load_steps=6 format=3 uid="uid://1jtwnqkas6rx"]
 
 [ext_resource type="Script" path="res://Scripts/projectile.gd" id="1_lh1n1"]
 [ext_resource type="Texture2D" uid="uid://dsnrcbtdudp32" path="res://Sprites/bolhas_normal.webp" id="2_fcwky"]
+[ext_resource type="Script" path="res://Scenes/killzone.gd" id="3_c1n86"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ebtkg"]
 radius = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yf0bc"]
+radius = 3.0
 
 [node name="Area2D" type="Area2D"]
 z_index = 1
@@ -23,4 +27,13 @@ hframes = 8
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 
+[node name="Killzone" type="Area2D" parent="."]
+collision_layer = 0
+script = ExtResource("3_c1n86")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+shape = SubResource("CircleShape2D_yf0bc")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Killzone" to="Killzone" method="_on_body_entered"]

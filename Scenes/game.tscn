@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dtkspkfrfkpr3" path="res://Sprites/tileset_x1-sheet.webp" id="3_5rco1"]
 [ext_resource type="Texture2D" uid="uid://bmpokrpnyrq08" path="res://Sprites/tileset x1.png" id="4_61o27"]
 [ext_resource type="Texture2D" uid="uid://d22418sesc7kl" path="res://Sprites/tileset.webp" id="5_bg1jl"]
-[ext_resource type="PackedScene" path="res://Scenes/trap_floor.tscn" id="6_lyvuk"]
+[ext_resource type="PackedScene" uid="uid://20ilyen6pwa7" path="res://Scenes/trap_floor.tscn" id="6_lyvuk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gnd66"]
 texture = ExtResource("3_5rco1")

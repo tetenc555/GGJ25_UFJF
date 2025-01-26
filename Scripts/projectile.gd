@@ -12,7 +12,7 @@ func _ready():
 	timer.wait_time = travelling_time  # Usando a variável que foi passada no momento da instanciação
 	timer.start()
 	collision.disabled = false
-	connect("body_entered", Callable(self, "_on_body_entered"))
+	#connect("body_entered", Callable(self, "_on_body_entered"))
 
 # Makes the projectile move in the right direction with the right speed
 func _physics_process(delta: float) -> void:
@@ -29,3 +29,7 @@ func _on_body_entered(body: Node) -> void:
 
 func _on_timer_timeout() -> void:
 	queue_free()
+
+
+func _on_killzone_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.

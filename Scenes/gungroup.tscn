@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cugjglg3lvvhx"]
+[gd_scene load_steps=7 format=3 uid="uid://cugjglg3lvvhx"]
 
 [ext_resource type="Script" path="res://Scripts/swap.gd" id="1_58ea7"]
 [ext_resource type="PackedScene" uid="uid://c8dtgf62iny4o" path="res://Scenes/gun.tscn" id="2_hcyc5"]
@@ -6,12 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://bri8b36vm3jk5" path="res://Sprites/becker.webp" id="4_ckphy"]
 [ext_resource type="Texture2D" uid="uid://7jmbkcniiepb" path="res://Sprites/pistol.webp" id="4_nce8q"]
 [ext_resource type="Texture2D" uid="uid://bxhchy8t21cfl" path="res://Sprites/shotgun.webp" id="5_omerg"]
-[ext_resource type="Texture2D" uid="uid://b2fush865qy87" path="res://Sprites/slingshot.webp" id="7_x8su3"]
 
 [node name="Guns" type="Node2D"]
 script = ExtResource("1_58ea7")
 
 [node name="Splasher" parent="." instance=ExtResource("2_hcyc5")]
+visible = false
 position = Vector2(-3, 1.49012e-08)
 scale = Vector2(1, 1)
 random_decay = true
@@ -81,22 +81,3 @@ texture = ExtResource("4_ckphy")
 
 [node name="Spawn" type="Node2D" parent="Flask"]
 position = Vector2(36, -1.49012e-08)
-
-[node name="Slingshot" parent="." instance=ExtResource("2_hcyc5")]
-visible = false
-position = Vector2(-3, 1.49012e-08)
-scale = Vector2(1, 1)
-bullet_decay_time = 3.0
-damage = 50
-fire_rate = 2.0
-projectile_speed = 200
-desactivated = true
-multishot = 1
-manual = true
-
-[node name="Sprite2D" type="Sprite2D" parent="Slingshot"]
-position = Vector2(27, 1)
-texture = ExtResource("7_x8su3")
-
-[node name="Spawn" type="Node2D" parent="Slingshot"]
-position = Vector2(28, -6)

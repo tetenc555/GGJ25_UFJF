@@ -15,7 +15,6 @@ extends Node2D
 @export var projectile_speed : int
 @export var desactivated := false
 @export var multishot : int
-@export var manual := false
 @export var explosive := false
 @export var random_spawn := false
 
@@ -36,11 +35,8 @@ func _process(_delta):
 	else:
 		sprite.flip_v = false
 	rotation = direction.angle()
-	if Input.is_action_pressed("Fire") and !manual:
+	if Input.is_action_pressed("Fire"):
 		check_cooldown()
-	elif manual:
-		if Input.is_action_just_pressed("Fire"):
-			check_cooldown()
 
 func check_cooldown():
 	if timer.time_left == 0:
