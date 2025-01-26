@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://7kv41rdw2f5o"]
 
-[ext_resource type="Script" uid="uid://c4i7mxemovo5y" path="res://Scripts/Enemies/Hedgehog/hedgehog.gd" id="1_e3802"]
+[ext_resource type="Script" path="res://Scripts/Enemies/Hedgehog/hedgehog.gd" id="1_e3802"]
 [ext_resource type="Texture2D" uid="uid://xsefh5nt2xf3" path="res://Sprites/porco_espinho.png" id="2_umecm"]
 [ext_resource type="Texture2D" uid="uid://boa2x3gft5jur" path="res://Sprites/porco_espinho_attack.png" id="2_ybgc7"]
 [ext_resource type="Texture2D" uid="uid://b3ncnhdguk6dx" path="res://Sprites/porco_espinho_walk.png" id="3_4xiih"]
@@ -96,7 +96,7 @@ radius = 97.6217
 [sub_resource type="CircleShape2D" id="CircleShape2D_4xiih"]
 
 [node name="Hedgehog" type="CharacterBody2D"]
-z_index = 1
+z_index = 2
 script = ExtResource("1_e3802")
 movement_type = "V"
 multishot = 10

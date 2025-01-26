@@ -1,0 +1,55 @@
+[gd_scene load_steps=7 format=3 uid="uid://dak3ch3kc7w7s"]
+
+[ext_resource type="Script" uid="uid://bfa0mqjgqyodx" path="res://Scripts/Enemies/wasp.gd" id="1_bx6jj"]
+[ext_resource type="Texture2D" uid="uid://b3i5vyq6ju1o2" path="res://Sprites/vespa_federal.png" id="2_khybf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3ma4w"]
+radius = 8.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iijfs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_khybf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ccrar"]
+radius = 162.003
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6sdqd"]
+radius = 10.0499
+
+[node name="Wasp" type="CharacterBody2D"]
+z_index = 2
+script = ExtResource("1_bx6jj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_3ma4w")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 2.38419e-07)
+sprite_frames = SubResource("SpriteFrames_iijfs")
+
+[node name="Aggro" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2147483648
+
+[node name="Aggro" type="CollisionShape2D" parent="Aggro"]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_ccrar")
+
+[node name="Hurtbox" type="Area2D" parent="."]
+visible = false
+collision_layer = 0
+collision_mask = 2147483648
+
+[node name="hurtbox" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("CircleShape2D_6sdqd")
+
+[connection signal="body_entered" from="Aggro" to="." method="_on_aggro_body_entered"]
+[connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]

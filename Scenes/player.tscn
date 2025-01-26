@@ -333,7 +333,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u2e7y"]
 size = Vector2(19.9997, 15.0056)
 
-[node name="BubbleGuy" type="CharacterBody2D" groups=["Player"]]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 z_index = 2
 rotation = -0.00587928
 collision_layer = 2147483650

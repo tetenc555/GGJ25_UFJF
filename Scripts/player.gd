@@ -6,12 +6,13 @@ var life = 2
 var didnt_pop = true
 var free = true
 var invincible = false
+var dying = false
 
 func take_damage(amount):
 	if !invincible:
 		if (amount>0):
 			life-=amount;
-		if (life <= 0):
+		if (life >= 0):
 			die();
 
 func _physics_process(_delta):
@@ -58,7 +59,9 @@ func update_animation():
 		sprite.flip_h = true
 		
 func die() -> void:
-	get_tree().reload_current_scene()
+	if dying == false:
+		dying = true
+		SceneController.reloadCurrentScene("Diamond")
 
 
 func _on_animated_sprite_2d_animation_finished() -> void:

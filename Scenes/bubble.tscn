@@ -1,8 +1,49 @@
-[gd_scene load_steps=6 format=3 uid="uid://1jtwnqkas6rx"]
+[gd_scene load_steps=11 format=3 uid="uid://1jtwnqkas6rx"]
 
 [ext_resource type="Script" uid="uid://buss6dnbvvxvs" path="res://Scripts/bubble.gd" id="1_i1mt7"]
-[ext_resource type="Texture2D" uid="uid://dsnrcbtdudp32" path="res://Sprites/bolhas_normal.webp" id="2_0iu24"]
+[ext_resource type="Texture2D" uid="uid://05qagdpiykxu" path="res://Sprites/estouro_branco.png" id="2_i1mt7"]
 [ext_resource type="Script" uid="uid://cipclba6yjv87" path="res://Scripts/killzone.gd" id="3_7vocm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0iu24"]
+atlas = ExtResource("2_i1mt7")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7vocm"]
+atlas = ExtResource("2_i1mt7")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_35n32"]
+atlas = ExtResource("2_i1mt7")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_733yr"]
+atlas = ExtResource("2_i1mt7")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mher7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0iu24")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7vocm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_35n32")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_733yr")
+}],
+"loop": false,
+"name": &"pop",
+"speed": 9.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ebtkg"]
 radius = 8.0
@@ -15,15 +56,14 @@ z_index = 3
 script = ExtResource("1_i1mt7")
 metadata/_edit_group_ = true
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_mher7")
+autoplay = "default"
+frame_progress = 1.0
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 1
 shape = SubResource("CircleShape2D_ebtkg")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-z_index = 1
-position = Vector2(-1, 0)
-texture = ExtResource("2_0iu24")
-hframes = 8
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
@@ -36,5 +76,6 @@ script = ExtResource("3_7vocm")
 shape = SubResource("CircleShape2D_yf0bc")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="Killzone" to="Killzone" method="_on_body_entered"]

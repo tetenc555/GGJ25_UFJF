@@ -1,12 +1,12 @@
 extends Node2D
 
-@onready var spawnInimigoTimer = $spawnInimigo
-@onready var player = $BubbleGuy
+@onready var spawner = $Spawner
+@onready var player = $Player
 
 @export var spawn_radius: float = 10
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	# spawnInimigoTimer.start() #spawns enemy in 5 seconds! Please change this as enemys should be called. this is only to be generic and alpha testing purpouses.
+	#spawner.start() #spawns enemy in 5 seconds! Please change this as enemys should be called. this is only to be generic and alpha testing purpouses.
 	pass # Replace with function body.
 
 

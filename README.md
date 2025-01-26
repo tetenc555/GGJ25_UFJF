@@ -34,5 +34,5 @@ Special thanks to the creators of the assets that were used! Below are the refer
 
 
 ## Repositores of the others games to achieve the Anthology diversifier:
-- Bubble Gun
-- Niddle Army Trainer
+- [Bubble Guns](https://github.com/CauaMoreno/bubbleguns) 
+- [Needle Army Trainer](https://github.com/CauaMoreno/NeedleArmyTrainer)
