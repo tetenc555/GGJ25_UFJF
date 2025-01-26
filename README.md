@@ -1,38 +1,38 @@
-# Projeto base para Godot 4.X
+# The Bubble War
 
-Um projeto base pra criar jogos de forma mais fácil na Godot. Use e abuse desse repositório para facilitar algumas configurações comuns a todos os jogos. 
+## Participants:
+[Cauã Moreno](https://github.com/CauaMoreno)
 
-## Como usar esse repositório?
-  Baixe o arquivo .zip e importe para a Godot. Depois, troque o nome do projeto e continue o desenvolvimento. 
+[Elizabeth Fernandes de Azevedo](https://github.com/Admirablw) 
 
-## Controlador de Cenas
-  Criei um Singleton chamado SceneController. Ele é responsável por controlar a transição de fases. 
-  Alguns comandos:
-  ```gdscript
-  SceneController.changeSceneTo(path, animacao1, animacao2)
-  ```
-  Nesse comando, você troca para a próxima cena. Começa com a animação 1 e abre a nova cena com a animação 2. De padrão, a animação 'Diamond'
-  ```gdscript
-  SceneController.reloadCurrentScene(animacao1, animacao2)
-  ```
-  Nesse comando, a cena atual é recarregada com a animação 1 abrindo e reabrindo com a animação 2
-  ```gdscript
-  SceneController.setPositionFocus(pos)
-  ```
-  Aqui, o foco da transição 'CircleToon' será a posição global passada como parâmetro. Se a câmera se mexer depois da chamada dessa função, as coisas podem dar errado. 
-  Também é possível resetar o foco depois de carregar as cenas, de acordo com a variável reset focus: ```SceneController.resetFocus = true```
+[Estêvão Barbosa Fiorilo da Rocha](https://github.com/tetenc555)
 
-## Menu inicial
-  O menu inicial funciona normalmente. Troque as texturas para as suas artes para deixar do jeito que quiser.
-  
-  ALERTA!!!! Lembre de trocar a String da cena inicial para ir para a sua cena inicial.
+[Miguel Dias de Abreu](https://github.com/Miguel-Dias-112)
 
-## Menu de pause
-  Nas fases em que é possível pausar, adicione o objeto 'MenuPause.tscn'. Ele funciona quando o jogador aperta 'Esc' e pausa a cena atual
+[Roz Oliveira Costa](https://www.instagram.com/arrozeart/)
 
-## Configurações
-  As configurações do jogo, como resolução e áudio são alterados nos menus. Essas configurações ficam salvas em um arquivo, facilitando o carregamento dessas configurações ao abrir pela segunda vez.
-  No áudio, troque as configurações de cada áudio do jogo pro Bus respectivo (Master, Musica, SFX)
+[João Pedro Ferreira Srbek](https://github.com/Jyrou)
 
-# Comentários finais
-  Com esse repostório, você não terá que se preocupar com as configurações de áudio, menus iniciais e transições de cena. Assim, vai poder focar nas mecânicas e gameplay dos seus jogos. 
+[João Lucas Silva Machado](https://github.com/WasteIy)
+
+
+## About the game:
+This game was made at the Universidade Federal de Juiz de Fora (UFJF) headquarters for the Global Game Jam 2025. It consists of a collection of 3 games, which are linked in the historical context of the bubble war. The main game (from this repository) was programmed in Godot during the period from the 24th to the 26th!
+
+
+
+## Diversifiers we achieved:
+- Sharing is caring -> Check the repositories!
+- Anthology -> Check the 3 games historys!
+- Documentary -> Check our development team Instagram [@capivaras_dev](https://www.instagram.com/capivaras_dev/)
+
+
+## Assets used:
+Special thanks to the creators of the assets that were used! Below are the references for each:
+- [Projeto Base com Tela Inicial by João Pedro Miranda Salim (jpsalim21 on GitHub)](https://github.com/jpsalim21/Godot-Projeto-Base)
+- [Tech Dungeon Rogue Lite by Trevor Pupkin (@TrevorPupkin on Twitter)](https://trevor-pupkin.itch.io/tech-dungeon-roguelite)
+
+
+## Repositores of the others games to achieve the Anthology diversifier:
+- Bubble Gun
+- Niddle Army Trainer
