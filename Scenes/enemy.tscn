@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://7kv41rdw2f5o"]
+[gd_scene load_steps=8 format=3 uid="uid://7kv41rdw2f5o"]
 
 [ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_e3802"]
 [ext_resource type="Texture2D" uid="uid://bpefvfixb5mki" path="res://Sprites/PlaceHolderInimigo_CatNPC.png" id="2_isuc7"]
@@ -29,8 +29,13 @@ animations = [{
 radius = 5.0
 height = 18.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_syu1a"]
+radius = 28.0
+
 [node name="Enemy" type="CharacterBody2D"]
 script = ExtResource("1_e3802")
+movement_type = "V"
+direction = Vector2i(0, 1)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_t3d0w")
@@ -39,10 +44,12 @@ frame_progress = 0.839184
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_lfgsy")
 
-[node name="RayCastLeft" type="RayCast2D" parent="."]
-target_position = Vector2(-15, 0)
-collision_mask = 5
+[node name="Area2D" type="Area2D" parent="."]
 
-[node name="RayCastRight" type="RayCast2D" parent="."]
-target_position = Vector2(15, 0)
-collision_mask = 7
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_syu1a")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
