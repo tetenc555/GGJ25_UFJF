@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
-const SPEED = 100.0
+const SPEED = 70.0
 var life = 100.0
 
 func _ready():
@@ -24,7 +24,7 @@ func _physics_process(delta):
 	velocity = SPEED * direction.normalized()
 	
 	if Input.is_action_pressed("Run"):
-		velocity *= 1.4
+		velocity *= 1.3
 		sprite.speed_scale = 2
 	else:
 		sprite.speed_scale = 1
