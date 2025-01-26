@@ -1,28 +1,84 @@
-[gd_scene load_steps=4 format=3 uid="uid://20ilyen6pwa7"]
+[gd_scene load_steps=10 format=3 uid="uid://20ilyen6pwa7"]
 
 [ext_resource type="Script" uid="uid://c7sagjjmiupfk" path="res://Scripts/trapfloor.gd" id="1_g2vgs"]
-[ext_resource type="Texture2D" uid="uid://beq23gbn31g3r" path="res://icon.svg" id="2_8i2c7"]
+[ext_resource type="Texture2D" uid="uid://b7hlipactrio1" path="res://Sprites/spikes.png" id="2_b6xg8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yh7c6"]
 size = Vector2(16, 16)
 
-[node name="trapfloor" type="Area2D"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ver1p"]
+atlas = ExtResource("2_b6xg8")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6xek"]
+atlas = ExtResource("2_b6xg8")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gers8"]
+atlas = ExtResource("2_b6xg8")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_58edt"]
+atlas = ExtResource("2_b6xg8")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jckbp"]
+atlas = ExtResource("2_b6xg8")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h1ovb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ver1p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o6xek")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gers8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_58edt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gers8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gers8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ver1p")
+}],
+"loop": false,
+"name": &"damage",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jckbp")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Trapfloor" type="Area2D"]
 z_index = 1
 collision_mask = 3
 script = ExtResource("1_g2vgs")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-2.38419e-07, 9.53674e-07)
-scale = Vector2(0.123047, 0.126953)
-texture = ExtResource("2_8i2c7")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_yh7c6")
 
-[node name="CoolDown" type="Timer" parent="."]
-wait_time = 3.0
+[node name="Cooldown" type="Timer" parent="."]
 one_shot = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_h1ovb")
+animation = &"damage"
+autoplay = "idle"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
-[connection signal="timeout" from="CoolDown" to="." method="_on_cool_down_timeout"]
+[connection signal="timeout" from="Cooldown" to="." method="_on_cool_down_timeout"]
