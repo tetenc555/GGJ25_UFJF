@@ -26,5 +26,5 @@ frame = 3
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_entered" from="." to="." method="_on_hitbox_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

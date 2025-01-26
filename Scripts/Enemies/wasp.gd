@@ -8,6 +8,7 @@ extends CharacterBody2D
 
 @onready var player = get_tree().get_first_node_in_group("Player")
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var cooldown: Timer = $Cooldown
 
 var current_health: int
 var SPEED = 20.0
@@ -43,6 +44,7 @@ func _physics_process(_delta):
 			move_and_slide()
 			update_animation()
 	elif !aggro:
+		SPEED = 20
 		direction_timer -= _delta
 		
 		# Change direction if the timer runs out
@@ -81,8 +83,15 @@ func _on_aggro_body_entered(body: Node2D) -> void:
 func _on_hurtbox_body_entered(body: Node2D) -> void:
 	if body.has_method("take_damage"):
 		body.take_damage(1) 
+		aggro = false
+		cooldown.start()
+		
 		
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if sprite.animation == "damage":
 		SPEED = 20
 		free = true
+
+
+func _on_cooldown_timeout() -> void:
+	aggro = true

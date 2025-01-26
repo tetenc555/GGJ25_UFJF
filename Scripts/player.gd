@@ -67,4 +67,5 @@ func die() -> void:
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if sprite.animation == "damage":
 		free = true
+		await(1)
 		invincible = false
