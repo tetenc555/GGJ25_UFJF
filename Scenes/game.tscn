@@ -1,13 +1,12 @@
-[gd_scene load_steps=13 format=4 uid="uid://dmniu5lts32gl"]
+[gd_scene load_steps=12 format=4 uid="uid://dmniu5lts32gl"]
 
-[ext_resource type="Script" uid="uid://dwmf82qgvj4e" path="res://Scripts/game.gd" id="1_b32yv"]
+[ext_resource type="Script" path="res://Scripts/game.gd" id="1_b32yv"]
 [ext_resource type="PackedScene" uid="uid://rw7ibob5cj24" path="res://Scenes/player.tscn" id="1_hqw4n"]
 [ext_resource type="Texture2D" uid="uid://dtkspkfrfkpr3" path="res://Sprites/tileset_x1-sheet.webp" id="3_5rco1"]
 [ext_resource type="Texture2D" uid="uid://bmpokrpnyrq08" path="res://Sprites/tileset x1.png" id="4_61o27"]
 [ext_resource type="Texture2D" uid="uid://d22418sesc7kl" path="res://Sprites/tileset.webp" id="5_bg1jl"]
-[ext_resource type="PackedScene" uid="uid://20ilyen6pwa7" path="res://Scenes/trapfloor.tscn" id="6_lyvuk"]
 [ext_resource type="PackedScene" uid="uid://7kv41rdw2f5o" path="res://Scenes/Enemies/Hedgehog/hedgehog.tscn" id="7_1l0tm"]
-[ext_resource type="PackedScene" uid="uid://dak3ch3kc7w7s" path="res://Scenes/Enemies/Hedgehog/wasp.tscn" id="8_lr82m"]
+[ext_resource type="PackedScene" uid="uid://b3kpgpnwnqtht" path="res://Scenes/Enemies/Hedgehog/wasp.tscn" id="8_lr82m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gnd66"]
 texture = ExtResource("3_5rco1")
@@ -677,70 +676,6 @@ tile_set = SubResource("TileSet_xbloj")
 position = Vector2(-231, -137)
 
 [node name="Traps" type="Node" parent="."]
-
-[node name="trapfloor9" parent="Traps" instance=ExtResource("6_lyvuk")]
-position = Vector2(120, -60)
-priority = 1
-
-[node name="trapfloor10" parent="Traps" instance=ExtResource("6_lyvuk")]
-position = Vector2(120, 20)
-priority = 1
-
-[node name="trapfloor11" parent="Traps" instance=ExtResource("6_lyvuk")]
-position = Vector2(120, 84)
-priority = 1
-
-[node name="trapfloor12" parent="Traps" instance=ExtResource("6_lyvuk")]
-position = Vector2(56, 20)
-priority = 1
-
-[node name="trapfloor13" parent="Traps" instance=ExtResource("6_lyvuk")]
-position = Vector2(72, 4)
-priority = 1
-
-[node name="trapfloor14" parent="Traps" instance=ExtResource("6_lyvuk")]
-position = Vector2(8, -60)
-priority = 1
-
-[node name="trapfloor15" parent="Traps" instance=ExtResource("6_lyvuk")]
-position = Vector2(152, -124)
-priority = 1
-
-[node name="trapfloor16" parent="Traps" instance=ExtResource("6_lyvuk")]
-position = Vector2(104, -124)
-priority = 1
-
-[node name="trapfloor" parent="Traps" instance=ExtResource("6_lyvuk")]
-position = Vector2(-72, 4)
-priority = 1
-
-[node name="trapfloor2" parent="Traps" instance=ExtResource("6_lyvuk")]
-position = Vector2(-72, 84)
-priority = 1
-
-[node name="trapfloor3" parent="Traps" instance=ExtResource("6_lyvuk")]
-position = Vector2(-56, 84)
-priority = 1
-
-[node name="trapfloor4" parent="Traps" instance=ExtResource("6_lyvuk")]
-position = Vector2(-120, 20)
-priority = 1
-
-[node name="trapfloor5" parent="Traps" instance=ExtResource("6_lyvuk")]
-position = Vector2(-104, 4)
-priority = 1
-
-[node name="trapfloor6" parent="Traps" instance=ExtResource("6_lyvuk")]
-position = Vector2(-184, 4)
-priority = 1
-
-[node name="trapfloor7" parent="Traps" instance=ExtResource("6_lyvuk")]
-position = Vector2(-40, -60)
-priority = 1
-
-[node name="trapfloor8" parent="Traps" instance=ExtResource("6_lyvuk")]
-position = Vector2(-88, -60)
-priority = 1
 
 [node name="Wasp" parent="." instance=ExtResource("8_lr82m")]
 position = Vector2(-199, -66)

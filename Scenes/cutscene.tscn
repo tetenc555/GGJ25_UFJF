@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/cutscene.gd" id="1_td7v3"]
 [ext_resource type="Theme" uid="uid://boio4eyolwhtj" path="res://Menus/UI_theme.tres" id="2_0amcp"]
 
-[node name="cutscene" type="Control"]
+[node name="Cutscene" type="Control"]
 layout_mode = 3
 anchor_right = 1.0
 anchor_bottom = 0.998
@@ -12,6 +12,12 @@ offset_bottom = -0.0440063
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_td7v3")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 852.0
+offset_bottom = 478.0
+color = Color(0, 0, 0, 1)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 1
@@ -25,14 +31,20 @@ offset_top = -91.606
 offset_right = 423.146
 offset_bottom = 126.394
 grow_horizontal = 2
-theme_override_font_sizes/normal_font_size = 20
+theme_override_font_sizes/normal_font_size = 17
 bbcode_enabled = true
-text = "[center]For many years, Bubblets and Needlers fought against each other! Always in war, the two groups made several attacks against their nations! 
-But this time, Niddlers  went too far, they decided to start a invasion at the Bubble Kingdom's sewage. Now, you, the city's best  guard need to destroy the invasors and
- make them regret this attack!"
+text = "[center]
+These are dark days, using his cruel machines, Dr. Bubbletinick has put the world at an impasse, but there is solution, the revolution has established a plan.
+
+However, for it to work, we must overload the factories, killing any robots that appear, while the revolution prepares a widespread attack.
+
+
+
+"
 fit_content = true
 
 [node name="Pass" type="Button" parent="."]
+layout_mode = 0
 offset_left = 201.0
 offset_top = 357.0
 offset_right = 665.0

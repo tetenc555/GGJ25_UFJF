@@ -24,8 +24,8 @@ GameController="*res://Menus/GameController.gd"
 
 [display]
 
-window/size/viewport_width=852
-window/size/viewport_height=478
+window/size/viewport_width=512
+window/size/viewport_height=288
 window/stretch/mode="canvas_items"
 
 [dotnet]

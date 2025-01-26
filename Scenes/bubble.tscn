@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://1jtwnqkas6rx"]
 
-[ext_resource type="Script" uid="uid://buss6dnbvvxvs" path="res://Scripts/bubble.gd" id="1_i1mt7"]
+[ext_resource type="Script" path="res://Scripts/bubble.gd" id="1_i1mt7"]
 [ext_resource type="Texture2D" uid="uid://05qagdpiykxu" path="res://Sprites/estouro_branco.png" id="2_i1mt7"]
-[ext_resource type="Script" uid="uid://cipclba6yjv87" path="res://Scripts/killzone.gd" id="3_7vocm"]
+[ext_resource type="Script" path="res://Scripts/killzone.gd" id="3_7vocm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0iu24"]
 atlas = ExtResource("2_i1mt7")
