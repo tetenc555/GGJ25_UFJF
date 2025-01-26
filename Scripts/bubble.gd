@@ -2,6 +2,7 @@ extends Area2D
 
 @onready var collision: CollisionShape2D = $CollisionShape2D
 @onready var timer: Timer = $Timer
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 var travelling_time
 var projectile_speed
@@ -24,8 +25,14 @@ func _on_body_entered(body: Node) -> void:
 		body.take_damage(damage)
 		
 func _on_timer_timeout() -> void:
-	queue_free()
+	projectile_speed = 0
+	sprite.play("pop")
 
 
 func _on_killzone_body_entered(body: Node2D) -> void:
 	pass
+
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if sprite.animation == "pop":
+		queue_free()

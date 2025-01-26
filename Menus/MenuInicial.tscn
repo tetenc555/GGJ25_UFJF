@@ -1,6 +1,5 @@
-[gd_scene load_steps=8 format=3 uid="uid://b2jk11veho2ly"]
+[gd_scene load_steps=7 format=3 uid="uid://b2jk11veho2ly"]
 
-[ext_resource type="Script" uid="uid://djrxho7xs1q05" path="res://Menus/MenuInicial.gd" id="1_pq5jh"]
 [ext_resource type="Theme" uid="uid://boio4eyolwhtj" path="res://Menus/UI_theme.tres" id="2_ckujo"]
 [ext_resource type="Script" uid="uid://bk654ednl067s" path="res://Menus/coisas_iniciais.gd" id="2_l5uqn"]
 
@@ -52,9 +51,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-
-[node name="Node" type="Node" parent="."]
-script = ExtResource("1_pq5jh")
 
 [node name="MenuInicial" type="Control" parent="."]
 layout_mode = 1
@@ -214,12 +210,4 @@ libraries = {
 }
 autoplay = "Inicial"
 
-[connection signal="pressed" from="MenuInicial/VBoxContainer/Start" to="Node" method="_on_start_pressed"]
-[connection signal="pressed" from="MenuInicial/VBoxContainer/Options" to="Node" method="_on_options_pressed"]
-[connection signal="pressed" from="MenuInicial/VBoxContainer/Quit" to="Node" method="_on_quit_pressed"]
-[connection signal="item_selected" from="Opcoes/VBoxContainer/Resolucao" to="Node" method="_on_resolucao_item_selected"]
-[connection signal="value_changed" from="Opcoes/VBoxContainer/GeralSlider" to="Node" method="_on_geral_slider_value_changed"]
-[connection signal="value_changed" from="Opcoes/VBoxContainer/MusicaSlider" to="Node" method="_on_musica_slider_value_changed"]
-[connection signal="value_changed" from="Opcoes/VBoxContainer/SFXSlider" to="Node" method="_on_sfx_slider_value_changed"]
-[connection signal="pressed" from="Opcoes/VBoxContainer/Voltar" to="Node" method="_on_voltar_pressed"]
 [connection signal="animation_finished" from="CoisasIniciais/AnimationPlayer" to="CoisasIniciais" method="_on_animation_player_animation_finished"]
