@@ -1,13 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://k10l1txhwx22"]
-
-[ext_resource type="Texture2D" uid="uid://bpefvfixb5mki" path="res://Sprites/PlaceHolderInimigo_CatNPC.png" id="2_isuc7"]
+[gd_scene load_steps=6 format=3 uid="uid://k10l1txhwx22"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qcvwc"]
-atlas = ExtResource("2_isuc7")
 region = Rect2(0, 0, 25, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3a14j"]
-atlas = ExtResource("2_isuc7")
 region = Rect2(325, 0, 25, 25)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_t3d0w"]
