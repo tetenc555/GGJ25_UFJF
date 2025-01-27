@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GGJ25"
-run/main_scene="res://Scenes/game.tscn"
+run/main_scene="res://Menus/MenuInicial.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 boot_splash/fullsize=false
 config/icon="res://icon.svg"
@@ -21,6 +21,7 @@ config/icon="res://icon.svg"
 Cortina="*res://TransicaoDeCenas/TransicaoCena.tscn"
 SceneController="*res://TransicaoDeCenas/SceneController.gd"
 GameController="*res://Menus/GameController.gd"
+AudioPlayer="*res://Scenes/audio_player.tscn"
 
 [display]
 

@@ -6,6 +6,8 @@ extends Node
 @onready var opcoes: Control = $"../Opcoes"
 
 func _ready() -> void:
+	AudioPlayer.play_music_level()
+	
 	$"../Opcoes/VBoxContainer/GeralSlider".value = GameController.configuracoes.audioMaster
 	$"../Opcoes/VBoxContainer/MusicaSlider".value = GameController.configuracoes.audioMusica
 	$"../Opcoes/VBoxContainer/SFXSlider".value = GameController.configuracoes.audioSFX
