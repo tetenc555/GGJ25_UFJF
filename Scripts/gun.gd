@@ -1,6 +1,3 @@
-#When I wrote this, only God and I understood what I was doing
-#Now, God only knows
-
 extends Node2D
 
 @onready var spawn: Node2D = $Spawn
@@ -8,70 +5,97 @@ extends Node2D
 @onready var timer: Timer = $Timer
 
 @export var projectile_scene: PackedScene = preload("res://Scenes/bubble.tscn") 
-@export var bullet_decay_time : float 
-@export var random_decay : bool
-@export var min_decay : float
-@export var max_decay : float
-@export var damage : int
-@export var fire_rate : float
-@export var projectile_speed : int
-@export var desactivated := false
-@export var multishot : int
-@export var random_spawn := false
+@export var bullet_decay_time: float = 2.0
+@export var random_decay: bool = false
+@export var min_decay: float = 0.5
+@export var max_decay: float = 3.0
+@export var damage: int = 1
+@export var fire_rate: float = 1.0
+@export var projectile_speed: int = 300
+@export var desactivated := false:
+	set(value):
+		desactivated = value
+		_update_visibility()
+@export var multishot: int = 1
+@export var spread_angle: float = 45.0
+@export var random_spawn: bool = false
+@export var min_random_angle: float = -60.0
+@export var max_random_angle: float = 45.0
 
+var _current_decay: float
 var direction
+
+
+func _ready():
+	timer.wait_time = 1.0 / fire_rate
+	_update_visibility()
+
 
 func _process(_delta):
 	if desactivated:
-		visible = false
 		return
-	visible = true
 	
-	timer.wait_time = 1/fire_rate
-	if random_decay:
-		bullet_decay_time = randomize_timer()
-	direction = global_position.direction_to(get_global_mouse_position())
-	if rotation > 1.5 or rotation < -1.5:
-		sprite.flip_v = true
-	else:
-		sprite.flip_v = false
-	rotation = direction.angle()
+	_update_aim()
+	
 	if Input.is_action_pressed("Fire"):
-		check_cooldown()
+		_try_shoot()
 
-func check_cooldown():
-	if timer.time_left == 0:
-		shoot_projectile()
-		timer.start()
-	else:
-		pass
 
-func shoot_projectile():
-	if multishot == 1:
-		shoot_in_direction(direction)
-	else:
-		var spread_angle = 45.0
-		var angle_step = spread_angle / (multishot - 1)
-		for i in range(multishot):
-			var angle_offset = (i - (multishot - 1) / 2) * angle_step
-			shoot_in_direction(direction.rotated(deg_to_rad(angle_offset)))
+func _update_visibility():
+	visible = not desactivated
 
-func shoot_in_direction(_direction):
-	if random_spawn:
-		var random_angle = randf_range(-60, 45)
-		_direction = _direction.rotated(deg_to_rad(random_angle))
+
+func _update_aim():
+	var mouse_pos = get_global_mouse_position()
+	direction = global_position.direction_to(mouse_pos)
 	
-	var projectile_instance = projectile_scene.instantiate()
-	pass_variables(projectile_instance)
-	get_tree().root.add_child(projectile_instance)
-	projectile_instance.global_position = spawn.global_position
-	projectile_instance.set_direction(_direction)
-	projectile_instance.projectile_speed = projectile_speed + get_parent().get_parent().velocity.length()
+	rotation = direction.angle()
+	sprite.flip_v = abs(direction.angle()) > deg_to_rad(85)
 
-func pass_variables(projectile):
-	projectile.travelling_time = bullet_decay_time
-	projectile.projectile_speed = damage
+
+func _try_shoot():
+	if timer.is_stopped():
+		_prepare_shot()
+		timer.start()
+
+
+func _prepare_shot():
+	if random_decay:
+		_current_decay = randf_range(min_decay, max_decay)
+	else:
+		_current_decay = bullet_decay_time
+	
+	if multishot > 1:
+		_fire_spread_shot()
+	else:
+		_fire_single_shot(direction)
+
+
+func _fire_spread_shot():
+	var angle_step = spread_angle / (multishot - 1) if multishot > 1 else 0.0
+	var start_angle = -spread_angle / 2.0
+	
+	for i in multishot:
+		var angle_offset = start_angle + (i * angle_step)
+		var shot_direction = direction.rotated(deg_to_rad(angle_offset))
+		_fire_single_shot(shot_direction)
+
+
+func _fire_single_shot(base_direction: Vector2):
+	var final_direction = base_direction
+	
+	if random_spawn:
+		var random_angle = deg_to_rad(randf_range(min_random_angle, max_random_angle))
+		final_direction = base_direction.rotated(random_angle)
+	
+	var projectile = projectile_scene.instantiate()
+	_configure_projectile(projectile, final_direction)
+	get_tree().root.add_child(projectile)
+
+
+func _configure_projectile(projectile: Node, direction: Vector2):
+	projectile.global_position = spawn.global_position
 	projectile.damage = damage
-
-func randomize_timer():
-	return randf_range(min_decay, max_decay)
+	projectile.travelling_time = _current_decay
+	projectile.projectile_speed = projectile_speed + get_parent().get_parent().velocity.length()
+	projectile.set_direction(direction)
