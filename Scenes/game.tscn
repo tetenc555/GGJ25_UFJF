@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://20ilyen6pwa7" path="res://Scenes/trapfloor.tscn" id="4_w3jym"]
 [ext_resource type="Texture2D" uid="uid://d22418sesc7kl" path="res://Sprites/tileset.webp" id="5_bg1jl"]
 [ext_resource type="PackedScene" uid="uid://7kv41rdw2f5o" path="res://Scenes/Enemies/Hedgehog/hedgehog.tscn" id="7_1l0tm"]
-[ext_resource type="PackedScene" uid="uid://b3kpgpnwnqtht" path="res://Scenes/Enemies/Hedgehog/wasp.tscn" id="8_lr82m"]
+[ext_resource type="PackedScene" uid="uid://b3kpgpnwnqtht" path="res://Scenes/Enemies/Wasp/wasp.tscn" id="8_lr82m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gnd66"]
 texture = ExtResource("3_5rco1")
