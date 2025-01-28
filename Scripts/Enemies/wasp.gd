@@ -15,19 +15,11 @@ var SPEED = 20.0
 var in_range = false
 var free = true
 var aggro = false
-
-# Internal timer to track direction changes
 var direction_timer: float = 0.0
 var current_direction: Vector2 = Vector2.ZERO
 
-# Ensures randomness is different each run
-
-
-
 func choose_random_direction():
-	# Generate a random unit vector for movement
 	current_direction = Vector2(randf_range(-1, 1), randf_range(-1, 1)).normalized()
-
 
 func _ready() -> void:
 	current_health = max_health
@@ -47,7 +39,6 @@ func _physics_process(_delta):
 		SPEED = 20
 		direction_timer -= _delta
 		
-		# Change direction if the timer runs out
 		if direction_timer <= 0:
 			direction_timer = direction_change_interval
 			choose_random_direction()
@@ -64,12 +55,9 @@ func update_animation():
 	if !free:
 		return
 func take_damage(amount: int) -> void:
-	#free = false
 	sprite.play("damage")
 	current_health -= amount
 	
-
-	# Check if the enemy is dead
 	if current_health <= 0:
 		die()
 
@@ -78,7 +66,6 @@ func die() -> void:
 
 func _on_aggro_body_entered(body: Node2D) -> void:
 	aggro = true
-
 
 func _on_hurtbox_body_entered(body: Node2D) -> void:
 	if body.has_method("take_damage"):
@@ -91,7 +78,6 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 	if sprite.animation == "damage":
 		SPEED = 20
 		free = true
-
 
 func _on_cooldown_timeout() -> void:
 	aggro = true
