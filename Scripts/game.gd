@@ -16,7 +16,7 @@ func _process(_delta: float) -> void:
 
 func _on_spawn_inimigo_timeout() -> void: #maybe the enemy should be passed as parameter. This should be more generic
 	var hedgehog = preload("res://Scenes/Enemies/Hedgehog/hedgehog.tscn").instantiate()
-	var wasp = preload("res://Scenes/Enemies/Hedgehog/wasp.tscn").instantiate()
+	var wasp = preload("res://Scenes/Enemies/Wasp/wasp.tscn").instantiate()
 	var spawnPos = get_spawn_pos()
 	var randomizer = randi_range(0,1)
 	var new_enemy
